@@ -1,2 +1,3 @@
-# reorg.dynamic-linear-economies
+# lecture-dle
+
 Dynamic Linear Economies
