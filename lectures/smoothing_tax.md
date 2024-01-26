@@ -924,14 +924,14 @@ and specified them in ways designed to align our models closely with the consump
 Other lectures make these objects endogenous and describe  how a government  optimally  manipulates prices of government debt, albeit indirectly via effects distorting
 taxes have on equilibrium prices and allocations.
 
-In {doc}`optimal taxation in an LQ economy <lqramsey>` and {doc}`recursive optimal taxation <opt_tax_recur>`, we study **complete-markets**
+In {doc}`optimal taxation in an LQ economy <lqramsey>` and {doc}`recursive optimal taxation <dps:opt_tax_recur>`, we study **complete-markets**
 models in which the government recognizes that it can manipulate  Arrow securities prices.
 
 Linear-quadratic versions of the Lucas-Stokey tax-smoothing model are described in {doc}`Optimal Taxation in an LQ Economy <lqramsey>`.
 
-That lecture is a warm-up for the non-linear-quadratic model of tax smoothing described in {doc}`Optimal Taxation with State-Contingent Debt <opt_tax_recur>`.
+That lecture is a warm-up for the non-linear-quadratic model of tax smoothing described in {doc}`Optimal Taxation with State-Contingent Debt <dps:opt_tax_recur>`.
 
-In both {doc}`Optimal Taxation in an LQ Economy <lqramsey>` and {doc}`Optimal Taxation with State-Contingent Debt <opt_tax_recur>`, the government  recognizes that its decisions affect prices.
+In both {doc}`Optimal Taxation in an LQ Economy <lqramsey>` and {doc}`Optimal Taxation with State-Contingent Debt <dps:opt_tax_recur>`, the government  recognizes that its decisions affect prices.
 
-In {doc}`optimal taxation with incomplete markets <amss>`, we study an **incomplete-markets** model in which the
+In {doc}`optimal taxation with incomplete markets <dps:amss>`, we study an **incomplete-markets** model in which the
 government also manipulates  prices of government debt.

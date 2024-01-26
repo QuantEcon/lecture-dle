@@ -89,8 +89,8 @@ Friedman’s adaptive expectation scheme the **answer**.
 Muth (1960) used classical prediction methods based on lag-operators and
 $z$-transforms to find the answer to his question.
 
-Please see lectures {doc}`Classical Control with Linear Algebra <lu_tricks>` and
-{doc}`Classical Filtering and Prediction with Linear Algebra <classical_filtering>` for an introduction to the classical
+Please see lectures {doc}`Classical Control with Linear Algebra <tools:lu_tricks>` and
+{doc}`Classical Filtering and Prediction with Linear Algebra <tools:classical_filtering>` for an introduction to the classical
 tools that Muth used.
 
 Rather than using those classical tools, in this lecture we apply the
