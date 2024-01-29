@@ -29,7 +29,7 @@ html:
 
 latex:
    latex_documents:
-      targetname: quantecon-python.tex
+      targetname: quantecon-dle.tex
 
 sphinx:
   extra_extensions: [sphinx_multitoc_numbering, sphinxext.rediraffe, sphinx_tojupyter, sphinxcontrib.youtube, sphinx.ext.todo, sphinx_exercise, sphinx_togglebutton, sphinx.ext.intersphinx, sphinx_reredirects]
@@ -81,8 +81,8 @@ sphinx:
           url: https://johnstachurski.net/
       header_organisation_url: https://quantecon.org
       header_organisation: QuantEcon
-      repository_url: https://github.com/QuantEcon/lecture-python.myst
-      nb_repository_url: https://github.com/QuantEcon/lecture-python.notebooks
+      repository_url: https://github.com/QuantEcon/lecture-dle.myst
+      nb_repository_url: https://github.com/QuantEcon/lecture-dle.notebooks
       twitter: quantecon
       twitter_logo_url: https://assets.quantecon.org/img/qe-twitter-logo.png
       og_logo_url: https://assets.quantecon.org/img/qe-og-logo.png
@@ -126,12 +126,12 @@ sphinx:
     rediraffe_redirects:
       index_toc.md: intro.md
     # Remote Redirects
-    redirects:
-      heavy_tails: https://intro.quantecon.org/heavy_tails.html
+    # redirects:
+      # heavy_tails: https://intro.quantecon.org/heavy_tails.html
     tojupyter_static_file_path: ["source/_static", "_static"]
     tojupyter_target_html: true
-    tojupyter_urlpath: "https://python.quantecon.org/"
-    tojupyter_image_urlpath: "https://python.quantecon.org/_static/"
+    tojupyter_urlpath: "https://dle.quantecon.org/"
+    tojupyter_image_urlpath: "https://dle.quantecon.org/_static/"
     tojupyter_lang_synonyms: ["ipython", "ipython3", "python"]
     tojupyter_kernels:
       python3:
