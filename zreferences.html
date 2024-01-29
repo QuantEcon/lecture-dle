@@ -1,0 +1,724 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>28. References &#8212; Dynamic Linear Economies</title>
+    <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
+        <script>
+            MathJax = {
+            loader: {load: ['[tex]/boldsymbol', '[tex]/textmacros']},
+            tex: {
+                packages: {'[+]': ['boldsymbol', 'textmacros']},
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                processEscapes: true,
+                macros: {
+                    "argmax" : "arg\\,max",
+                    "argmin" : "arg\\,min",
+                    "col"    : "col",
+                    "Span"   :  "span",
+                    "epsilon": "\\varepsilon",
+                    "EE": "\\mathbb{E}",
+                    "PP": "\\mathbb{P}",
+                    "RR": "\\mathbb{R}",
+                    "NN": "\\mathbb{N}",
+                    "ZZ": "\\mathbb{Z}",
+                    "aA": "\\mathcal{A}",
+                    "bB": "\\mathcal{B}",
+                    "cC": "\\mathcal{C}",
+                    "dD": "\\mathcal{D}",
+                    "eE": "\\mathcal{E}",
+                    "fF": "\\mathcal{F}",
+                    "gG": "\\mathcal{G}",
+                    "hH": "\\mathcal{H}",
+                }
+            },
+            svg: {
+                fontCache: 'global',
+                scale: 0.92,
+                displayAlign: "center",
+            },
+            };
+        </script>
+    
+    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/quantecon-book-theme.css?digest=b09b2da44b9015b4fa76ea072fa2d8f7faee5492" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/scripts/quantecon-book-theme.js?digest=eed9c059a3ee152aae2353ec732f0a6d12e6aa07"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'zreferences';</script>
+    <link rel="canonical" href="https://python.quantecon.org/zreferences.html" />
+    <link rel="shortcut icon" href="_static/lectures-favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="29. Execution Statistics" href="status.html" />
+    <link rel="prev" title="27. Troubleshooting" href="troubleshooting.html" />
+
+<!-- Normal Meta Tags -->
+<meta name="author" context="Thomas J. Sargent and John Stachurski" />
+<meta name="keywords" content="Python, QuantEcon, Quantitative Economics, Economics, Sloan, Alfred P. Sloan Foundation, Tom J. Sargent, John Stachurski" />
+<meta name="description" content=This website presents a set of lectures on dynamic linear economies and tools needed for this this class of economic models. />
+
+<!-- Twitter tags -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@quantecon" />
+<meta name="twitter:title" content="References"/>
+<meta name="twitter:description" content="This website presents a set of lectures on dynamic linear economies and tools needed for this this class of economic models.">
+<meta name="twitter:creator" content="@quantecon">
+<meta name="twitter:image" content="https://assets.quantecon.org/img/qe-twitter-logo.png">
+
+<!-- Opengraph tags -->
+<meta property="og:title" content="References" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://python.quantecon.org/zreferences.html" />
+<meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
+<meta property="og:description" content="This website presents a set of lectures on dynamic linear economies and tools needed for this this class of economic models." />
+<meta property="og:site_name" content="Dynamic Linear Economies" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+<body>
+
+
+    <span id="top"></span>
+
+    <div class="qe-wrapper">
+
+        <div class="qe-main">
+
+            <div class="qe-page" id=zreferences>
+
+                <div class="qe-page__toc">
+
+                    <div class="inner">
+
+                        
+
+
+                        <nav id="bd-toc-nav" class="qe-page__toc-nav">
+                            
+                            <p class="logo">
+                                
+                                    
+                                    <a href=https://quantecon.org><img src="_static/qe-logo-large.png" class="logo logo-img" alt="logo"></a>
+                                    
+                                    
+                                
+                            </p>
+
+                            <p class="powered">Powered by <a href="https://jupyterbook.org/">Jupyter Book</a></p>
+
+                        </nav>
+
+                        <div class="qe-page__toc-footer">
+                            
+                            
+                            <p><a href="#top"><strong>Back to top</strong></a></p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="qe-page__header">
+
+                    <div class="qe-page__header-copy">
+
+                        <p class="qe-page__header-heading"><a href="intro.html">Dynamic Linear Economies</a></p>
+
+                        <p class="qe-page__header-subheading">References</p>
+
+                    </div>
+                    <!-- length 2, since its a string and empty dict has length 2 - {} -->
+                        <p class="qe-page__header-authors" font-size="18">
+                            
+                                
+                                    <a href="http://www.tomsargent.com/" target="_blank"><span>Thomas J. Sargent</span></a>
+                                
+                            
+                                
+                                    and <a href="https://johnstachurski.net/" target="_blank"><span>John Stachurski</span></a>
+                                
+                            
+                        </p>
+
+
+                </div> <!-- .page__header -->
+
+
+
+                
+                <main class="qe-page__content" role="main">
+                    
+                    <div>
+                        
+  <section class="tex2jax_ignore mathjax_ignore" id="references">
+<span id="id1"></span><h1><span class="section-number">28. </span>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h1>
+<div class="docutils container" id="id2">
+<dl class="citation">
+<dt class="label" id="id133"><span class="brackets">AM05</span></dt>
+<dd><p>D. B. O. Anderson and J. B. Moore. <em>Optimal Filtering</em>. Dover Publications, 2005.</p>
+</dd>
+<dt class="label" id="id273"><span class="brackets">AHMS96</span></dt>
+<dd><p>E. W. Anderson, L. P. Hansen, E. R. McGrattan, and T. J. Sargent. Mechanics of Forming and Estimating Dynamic Linear Economies. In <em>Handbook of Computational Economics</em>. Elsevier, vol 1 edition, 1996.</p>
+</dd>
+<dt class="label" id="id57"><span class="brackets">AP11</span></dt>
+<dd><p>Orazio P Attanasio and Nicola Pavoni. Risk sharing in private information models with asset accumulation: explaining the excess smoothness of consumption. <em>Econometrica</em>, 79(4):1027–1068, 2011.</p>
+</dd>
+<dt class="label" id="id136"><span class="brackets">Bar79</span></dt>
+<dd><p>Robert J Barro. On the Determination of the Public Debt. <em>Journal of Political Economy</em>, 87(5):940–971, 1979.</p>
+</dd>
+<dt class="label" id="id236"><span class="brackets">Bar99</span></dt>
+<dd><p>Robert J Barro. Determinants of democracy. <em>Journal of Political economy</em>, 107(S6):S158–S183, 1999.</p>
+</dd>
+<dt class="label" id="id237"><span class="brackets">BM03</span></dt>
+<dd><p>Robert J Barro and Rachel McCleary. Religion and economic growth. Technical Report, National Bureau of Economic Research, 2003.</p>
+</dd>
+<dt class="label" id="id100"><span class="brackets">Bew86</span></dt>
+<dd><p>Truman F Bewley. Stationary monetary equilibrium with a continuum of independently fluctuating consumers. In Werner Hildenbran and Andreu Mas-Colell, editors, <em>Contributions to Mathematical Economics in Honor of Gerard Debreu</em>, pages 27–102. North-Holland, Amsterdam, 1986.</p>
+</dd>
+<dt class="label" id="id138"><span class="brackets">Bis06</span></dt>
+<dd><p>C. M. Bishop. <em>Pattern Recognition and Machine Learning</em>. Springer, 2006.</p>
+</dd>
+<dt class="label" id="id140"><span class="brackets">Car01</span></dt>
+<dd><p>Christopher D Carroll. A Theory of the Consumption Function, with and without Liquidity Constraints. <em>Journal of Economic Perspectives</em>, 15(3):23–45, 2001.</p>
+</dd>
+<dt class="label" id="id144"><span class="brackets">Dea91</span></dt>
+<dd><p>Angus Deaton. Saving and Liquidity Constraints. <em>Econometrica</em>, 59(5):1221–1248, 1991.</p>
+</dd>
+<dt class="label" id="id145"><span class="brackets">DP94</span></dt>
+<dd><p>Angus Deaton and Christina Paxson. Intertemporal Choice and Inequality. <em>Journal of Political Economy</em>, 102(3):437–467, 1994.</p>
+</dd>
+<dt class="label" id="id233"><span class="brackets">DVGC99</span></dt>
+<dd><p>JBR Do Val, JC Geromel, and OLV Costa. Solutions for the linear-quadratic control problem of markov jump linear systems. <em>Journal of Optimization Theory and Applications</em>, 103(2):283–311, 1999.</p>
+</dd>
+<dt class="label" id="id149"><span class="brackets">EG87</span></dt>
+<dd><p>Robert F Engle and Clive W J Granger. Co-integration and Error Correction: Representation, Estimation, and Testing. <em>Econometrica</em>, 55(2):251–276, 1987.</p>
+</dd>
+<dt class="label" id="id151"><span class="brackets">Fri56</span></dt>
+<dd><p>M. Friedman. <em>A Theory of the Consumption Function</em>. Princeton University Press, 1956.</p>
+</dd>
+<dt class="label" id="id134"><span class="brackets">Gal37</span></dt>
+<dd><p>Albert Gallatin. Report on the finances**, november, 1807. In <em>Reports of the Secretary of the Treasury of the United States, Vol 1</em>. Government printing office, Washington, DC, 1837.</p>
+</dd>
+<dt class="label" id="id152"><span class="brackets">Hal78</span></dt>
+<dd><p>Robert E Hall. Stochastic Implications of the Life Cycle-Permanent Income Hypothesis: Theory and Evidence. <em>Journal of Political Economy</em>, 86(6):971–987, 1978.</p>
+</dd>
+<dt class="label" id="id153"><span class="brackets">HM82</span></dt>
+<dd><p>Robert E Hall and Frederic S Mishkin. The Sensitivity of Consumption to Transitory Income: Estimates from Panel Data on Households. <em>National Bureau of Economic Research Working Paper Series</em>, 1982.</p>
+</dd>
+<dt class="label" id="id157"><span class="brackets">HS08</span></dt>
+<dd><p>L P Hansen and T J Sargent. <em>Robustness</em>. Princeton University Press, 2008.</p>
+</dd>
+<dt class="label" id="id156"><span class="brackets">HS13a</span></dt>
+<dd><p>L P Hansen and T J Sargent. <em>Recursive Models of Dynamic Linear Economies</em>. The Gorman Lectures in Economics. Princeton University Press, 2013.</p>
+</dd>
+<dt class="label" id="id71"><span class="brackets">HS13b</span></dt>
+<dd><p>Lars Peter Hansen and Thomas J. Sargent. <em>Recursive Linear Models of Dynamic Economics</em>. Princeton University Press, Princeton, New Jersey, 2013.</p>
+</dd>
+<dt class="label" id="id159"><span class="brackets">HLL96</span></dt>
+<dd><p>O Hernandez-Lerma and J B Lasserre. <em>Discrete-Time Markov Control Processes: Basic Optimality Criteria</em>. Number Vol 1 in Applications of Mathematics Stochastic Modelling and Applied Probability. Springer, 1996.</p>
+</dd>
+<dt class="label" id="id32"><span class="brackets">HMMS60</span></dt>
+<dd><p>Charles Holt, Franco Modigliani, John F. Muth, and Herbert Simon. <em>Planning Production, Inventories, and Work Force</em>. Prentice-Hall International Series in Management, New Jersey, 1960.</p>
+</dd>
+<dt class="label" id="id93"><span class="brackets">JYC88</span></dt>
+<dd><p>Robert J. Shiller John Y. Campbell. The Dividend-Price Ratio and Expectations of Future Dividends and Discount Factors. <em>Review of Financial Studies</em>, 1(3):195–228, 1988.</p>
+</dd>
+<dt class="label" id="id33"><span class="brackets">LWY13</span></dt>
+<dd><p>Eric M. Leeper, Todd B. Walker, and Shu‐Chun Susan Yang. Fiscal foresight and information flows. <em>Econometrica</em>, 81(3):1115–1145, May 2013.</p>
+</dd>
+<dt class="label" id="id92"><span class="brackets">LL01</span></dt>
+<dd><p>Martin Lettau and Sydney Ludvigson. Consumption, Aggregate Wealth, and Expected Stock Returns. <em>Journal of Finance</em>, 56(3):815–849, 06 2001.</p>
+</dd>
+<dt class="label" id="id91"><span class="brackets">LL04</span></dt>
+<dd><p>Martin Lettau and Sydney C. Ludvigson. Understanding Trend and Cycle in Asset Values: Reevaluating the Wealth Effect on Consumption. <em>American Economic Review</em>, 94(1):276–299, March 2004.</p>
+</dd>
+<dt class="label" id="id173"><span class="brackets">LS18</span></dt>
+<dd><p>L Ljungqvist and T J Sargent. <em>Recursive Macroeconomic Theory</em>. MIT Press, 4 edition, 2018.</p>
+</dd>
+<dt class="label" id="id174"><span class="brackets">Luc78</span></dt>
+<dd><p>Robert E Lucas, Jr. Asset prices in an exchange economy. <em>Econometrica: Journal of the Econometric Society</em>, 46(6):1429–1445, 1978.</p>
+</dd>
+<dt class="label" id="id176"><span class="brackets">LS83</span></dt>
+<dd><p>Robert E Lucas, Jr. and Nancy L Stokey. Optimal Fiscal and Monetary Policy in an Economy without Capital. <em>Journal of monetary Economics</em>, 12(3):55–93, 1983.</p>
+</dd>
+<dt class="label" id="id186"><span class="brackets">MB54</span></dt>
+<dd><p>F. Modigliani and R. Brumberg. Utility analysis and the consumption function: An interpretation of cross-section data. In K.K Kurihara, editor, <em>Post-Keynesian Economics</em>. 1954.</p>
+</dd>
+<dt class="label" id="id110"><span class="brackets">Mut60</span></dt>
+<dd><p>John F Muth. Optimal properties of exponentially weighted forecasts. <em>Journal of the american statistical association</em>, 55(290):299–306, 1960.</p>
+</dd>
+<dt class="label" id="id188"><span class="brackets">Par99</span></dt>
+<dd><p>Jonathan A Parker. The Reaction of Household Consumption to Predictable Changes in Social Security Taxes. <em>American Economic Review</em>, 89(4):959–973, 1999.</p>
+</dd>
+<dt class="label" id="id194"><span class="brackets">Ram27</span></dt>
+<dd><p>F. P. Ramsey. A Contribution to the theory of taxation. <em>Economic Journal</em>, 37(145):47–61, 1927.</p>
+</dd>
+<dt class="label" id="id70"><span class="brackets">RMS94</span></dt>
+<dd><p>Sherwin Rosen, Kevin M Murphy, and Jose A Scheinkman. Cattle cycles. <em>Journal of Political Economy</em>, 102(3):468–492, 1994.</p>
+</dd>
+<dt class="label" id="id69"><span class="brackets">RR04</span></dt>
+<dd><p>Jaewoo Ryoo and Sherwin Rosen. The engineering labor market. <em>Journal of political economy</em>, 112(S1):S110–S140, 2004.</p>
+</dd>
+<dt class="label" id="id58"><span class="brackets">SHR91</span></dt>
+<dd><p>Thomas Sargent, Lars Peter Hansen, and Will Roberts. Observable implications of present value budget balance. In <em>Rational Expectations Econometrics</em>. Westview Press, 1991.</p>
+</dd>
+<dt class="label" id="id210"><span class="brackets">STY04</span></dt>
+<dd><p>Kjetil Storesletten, Christopher I Telmer, and Amir Yaron. Consumption and risk sharing over the life cycle. <em>Journal of Monetary Economics</em>, 51(3):609–633, 2004.</p>
+</dd>
+<dt class="label" id="id235"><span class="brackets">SW09</span></dt>
+<dd><p>Lars E.O. Svensson and Noah Williams. Optimal Monetary Policy under Uncertainty in DSGE Models: A Markov Jump-Linear-Quadratic Approach. In Klaus Schmidt-Hebbel, Carl E. Walsh, Norman Loayza (Series Editor), and Klaus Schmidt-Hebbel (Series, editors, <em>Monetary Policy under Uncertainty and Learning</em>, volume 13 of Central Banking, Analysis, and Economic Policies Book Series, chapter 3, pages 077–114. Central Bank of Chile, edition, March 2009.</p>
+</dd>
+<dt class="label" id="id234"><span class="brackets">SW+08</span></dt>
+<dd><p>Lars EO Svensson, Noah Williams, and others. Optimal monetary policy under uncertainty: a markov jump-linear-quadratic approach. <em>Federal Reserve Bank of St. Louis Review</em>, 90(4):275–293, 2008.</p>
+</dd>
+</dl>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                    </div>
+                    
+                </main> <!-- .page__content -->
+                
+
+
+                <footer class="qe-page__footer">
+
+                    <p><a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png"></a></p>
+
+                    <p>Creative Commons License &ndash; This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International.</p>
+
+                </footer> <!-- .page__footer -->
+
+            </div> <!-- .page -->
+
+            
+
+            
+            <div class="qe-sidebar bd-sidebar inactive" id="site-navigation">
+
+                <div class="qe-sidebar__header">
+
+
+                    Contents
+
+                </div>
+
+                <nav class="qe-sidebar__nav" id="qe-sidebar-nav" aria-label="Main navigation">
+                    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Kalman Filter
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="kalman.html">
+   1. A First Look at the Kalman Filter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="kalman_2.html">
+   2. Another Look at the Kalman Filter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="muth_kalman.html">
+   3. Reverse Engineering a la Muth
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  LQ Control
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lqcontrol.html">
+   4. LQ Control: Foundations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lagrangian_lqdp.html">
+   5. Lagrangian for LQ Control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cross_product_trick.html">
+   6. Eliminating Cross Products
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="perm_income.html">
+   7. The Permanent Income Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="perm_income_cons.html">
+   8. Permanent Income II: LQ Techniques
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lq_inventories.html">
+   9. Production Smoothing via Inventories
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cons_news.html">
+   10. Information and Consumption Smoothing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="smoothing.html">
+   11. Consumption Smoothing with Complete and Incomplete Markets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="smoothing_tax.html">
+   12. Tax Smoothing with Complete and Incomplete Markets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="markov_jump_lq.html">
+   13. Markov Jump Linear Quadratic Dynamic Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tax_smoothing_1.html">
+   14. How to Pay for a War: Part 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tax_smoothing_2.html">
+   15. How to Pay for a War: Part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tax_smoothing_3.html">
+   16. How to Pay for a War: Part 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lqramsey.html">
+   17. Optimal Taxation in an LQ Economy
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Dynamic Linear Economies
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_models.html">
+   18. Linear State Space Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hs_recursive_models.html">
+   19. Recursive Models of Dynamic Linear Economies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="growth_in_dles.html">
+   20. Growth in Dynamic Linear Economies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lucas_asset_pricing_dles.html">
+   21. Lucas Asset Pricing Using DLE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="irfs_in_hall_model.html">
+   22. IRFs in Hall Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="permanent_income_dles.html">
+   23. Permanent Income Model using the DLE Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="rosen_schooling_model.html">
+   24. Rosen Schooling Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cattle_cycles.html">
+   25. Cattle Cycles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hs_invertibility_example.html">
+   26. Shock Non Invertibility
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Other
+ </span>
+</p>
+<ul class="current nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="troubleshooting.html">
+   27. Troubleshooting
+  </a>
+ </li>
+ <li class="toctree-l1 current active active">
+  <a class="current reference internal" href="#">
+   28. References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="status.html">
+   29. Execution Statistics
+  </a>
+ </li>
+</ul>
+
+                </nav>
+
+                <div class="qe-sidebar__footer">
+
+                </div>
+
+            </div> <!-- .sidebar -->
+            
+        </div> <!-- .main -->
+
+        <div class="qe-toolbar">
+
+            <div class="qe-toolbar__inner">
+
+                <ul class="qe-toolbar__main">
+                    <li data-tippy-content="Table of Contents" class="btn__sidebar"><i data-feather="menu"></i></li>
+                    <li data-tippy-content="Home"><a href="intro.html"><i data-feather="home"></i></a></li>
+                    <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
+                </ul>
+
+                <ul class="qe-toolbar__links">
+                    <li class="btn__search">
+                        <form action="search.html" method="get">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" accesskey="k">
+                            <i data-feather="search" id="search-icon"></i>
+                        </form>
+                    </li>
+                    <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
+                    <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
+                    <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
+                    <li data-tippy-content="Change contrast" class="btn__contrast"><i data-feather="sunset"></i></li>
+                    <li data-tippy-content="Download Notebook"><a href="/_notebooks/zreferences.ipynb" download><i data-feather="download-cloud"></i></a></li>
+                    <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
+                        <li class="download-pdf" id="downloadButton"><i data-feather="file"></i></li>
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-dle.myst/zreferences.md" download><i data-feather="github"></i></a></li>
+                </ul>
+
+            </div>
+
+        </div> <!-- .toolbar -->
+        <div id="downloadPDFModal" style="display: none;">
+            <ul class="pdf-options" style="display: block;">
+                <li class="download-pdf-book" onClick="window.print()">
+                    <p>Lecture (PDF)</p>
+                </li>
+                <li class="download-pdf-file">
+                    <a href="/_pdf/quantecon-dle.pdf" download><p>Book (PDF)</p></a>
+                </li>
+            </ul>
+        </div>
+        <div id="settingsModal" style="display: none;">
+            <p class="modal-title"> Notebook Launcher </p>
+            <div class="modal-desc">
+            <p>
+                Choose public or private cloud service for "Launch" button.
+            </p>
+            </div>
+            <p class="modal-subtitle">Select a server</p>
+            <ul class="modal-servers">
+            <li class="active launcher-public">
+                <span class="label">Public</span>
+                <select id="launcher-public-input">
+                
+                    <option value="https://colab.research.google.com/github/QuantEcon/lecture-dle.notebooks/blob/master/zreferences.ipynb">Colab</option>
+                
+                </select>
+                <i class="fas fa-check-circle"></i>
+            </li>
+            <li class="launcher-private">
+                <span class="label">Private</span>
+                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-dle.notebooks" data-urlpath="tree/lecture-dle.notebooks/zreferences.ipynb" data-branch=master>
+                <i class="fas fa-check-circle"></i>
+            </li>
+            </ul>
+            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-dle.notebooks/blob/master/zreferences.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <script>
+                // QuantEcon Notebook Launcher
+                const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
+                // Highlight the server type if previous selection exists
+                if (typeof localStorage.launcherType !== 'undefined') {
+                  for (var i = 0; i < launcherTypeElements.length; i++) {
+                    launcherTypeElements[i].classList.remove('active');
+                    if ( launcherTypeElements[i].classList.contains(localStorage.launcherType) ) {
+                      launcherTypeElements[i].classList.add('active');
+                    }
+                  }
+                }
+                // Highlight server type on click and set local storage value
+                for (var i = 0; i < launcherTypeElements.length; i++) {
+                  launcherTypeElements[i].addEventListener('click', function() {
+                    for (var j = 0; j < launcherTypeElements.length; j++) {
+                      launcherTypeElements[j].classList.remove('active');
+                    }
+                    this.classList.add('active');
+                    if ( this.classList.contains('launcher-private') ) {
+                      localStorage.launcherType = 'launcher-private';
+                    } else if ( this.classList.contains('launcher-public') ) {
+                      localStorage.launcherType = 'launcher-public';
+                    }
+                    setLaunchServer();
+                  })
+                }
+                const launcherPublic = document.getElementById('launcher-public-input');
+                const launcherPrivate = document.getElementById('launcher-private-input');
+                const pageName = "zreferences";
+                const repoURL = "https://github.com/QuantEcon/lecture-dle.notebooks";
+                const urlPath = "tree/lecture-dle.notebooks/zreferences.ipynb";
+                const branch = "master"
+                const launchNotebookLink = document.getElementById('advancedLaunchButton');
+
+                // Highlight public server option if previous selection exists
+                if (typeof localStorage.launcherPublic !== 'undefined') {
+                  launcherPublic.value = localStorage.launcherPublic;
+                }
+                // Update local storage upon public server selection
+                launcherPublic.addEventListener('change', (event) => {
+                  setLaunchServer();
+                });
+                // Populate private server input if previous entry exists
+                if (typeof localStorage.launcherPrivate !== 'undefined') {
+                  launcherPrivate.value = localStorage.launcherPrivate;
+                }
+                // Update local storage when a private server is entered
+                launcherPrivate.addEventListener('input', (event) => {
+                  setLaunchServer();
+                });
+
+                // Function to update the "Launch Notebook" link href
+                function setLaunchServer() {
+                  launchNotebookLink.removeAttribute("style")
+                  if ( localStorage.launcherType == 'launcher-private' ) {
+                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    launcherPrivateValue = launcherPrivate.value
+                    if (!launcherPrivateValue) {
+                        launchNotebookLink.removeAttribute("href")
+                        launchNotebookLink.style.background = "grey"
+                        return
+                    }
+                    localStorage.launcherPrivate = launcherPrivateValue;
+                    privateServer = localStorage.launcherPrivate.replace(/\/$/, "")
+                    if (!privateServer.includes("http")) {
+                        privateServer = "http://" + privateServer
+                    }
+                    launchNotebookLinkURL = privateServer + repoPrefix;
+                  } else if ( localStorage.launcherType == 'launcher-public' ) {
+                    launcherPublicValue = launcherPublic.options[launcherPublic.selectedIndex].value;
+                    localStorage.launcherPublic = launcherPublicValue;
+                    launchNotebookLinkURL = localStorage.launcherPublic;
+                  }
+                  if (launchNotebookLinkURL) launchNotebookLink.href = launchNotebookLinkURL;
+                }
+                // Check if user has previously selected a server
+                if ( (typeof localStorage.launcherPrivate !== 'undefined') || (typeof localStorage.launcherPublic !== 'undefined') ) {
+                  setLaunchServer();
+                }
+                </script>
+
+        </div>
+
+    </div> <!-- .wrapper-->
+  </body>
+</html>

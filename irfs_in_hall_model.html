@@ -1,0 +1,950 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>22. IRFs in Hall Models &#8212; Dynamic Linear Economies</title>
+    <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    
+        <script>
+            MathJax = {
+            loader: {load: ['[tex]/boldsymbol', '[tex]/textmacros']},
+            tex: {
+                packages: {'[+]': ['boldsymbol', 'textmacros']},
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                processEscapes: true,
+                macros: {
+                    "argmax" : "arg\\,max",
+                    "argmin" : "arg\\,min",
+                    "col"    : "col",
+                    "Span"   :  "span",
+                    "epsilon": "\\varepsilon",
+                    "EE": "\\mathbb{E}",
+                    "PP": "\\mathbb{P}",
+                    "RR": "\\mathbb{R}",
+                    "NN": "\\mathbb{N}",
+                    "ZZ": "\\mathbb{Z}",
+                    "aA": "\\mathcal{A}",
+                    "bB": "\\mathcal{B}",
+                    "cC": "\\mathcal{C}",
+                    "dD": "\\mathcal{D}",
+                    "eE": "\\mathcal{E}",
+                    "fF": "\\mathcal{F}",
+                    "gG": "\\mathcal{G}",
+                    "hH": "\\mathcal{H}",
+                }
+            },
+            svg: {
+                fontCache: 'global',
+                scale: 0.92,
+                displayAlign: "center",
+            },
+            };
+        </script>
+    
+    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/quantecon-book-theme.css?digest=b09b2da44b9015b4fa76ea072fa2d8f7faee5492" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/scripts/quantecon-book-theme.js?digest=eed9c059a3ee152aae2353ec732f0a6d12e6aa07"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"argmax": "arg\\,max", "argmin": "arg\\,min"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'irfs_in_hall_model';</script>
+    <link rel="canonical" href="https://python.quantecon.org/irfs_in_hall_model.html" />
+    <link rel="shortcut icon" href="_static/lectures-favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="23. Permanent Income Model using the DLE Class" href="permanent_income_dles.html" />
+    <link rel="prev" title="21. Lucas Asset Pricing Using DLE" href="lucas_asset_pricing_dles.html" />
+
+<!-- Normal Meta Tags -->
+<meta name="author" context="Thomas J. Sargent and John Stachurski" />
+<meta name="keywords" content="Python, QuantEcon, Quantitative Economics, Economics, Sloan, Alfred P. Sloan Foundation, Tom J. Sargent, John Stachurski" />
+<meta name="description" content=This website presents a set of lectures on dynamic linear economies and tools needed for this this class of economic models. />
+
+<!-- Twitter tags -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@quantecon" />
+<meta name="twitter:title" content="IRFs in Hall Models"/>
+<meta name="twitter:description" content="This website presents a set of lectures on dynamic linear economies and tools needed for this this class of economic models.">
+<meta name="twitter:creator" content="@quantecon">
+<meta name="twitter:image" content="https://assets.quantecon.org/img/qe-twitter-logo.png">
+
+<!-- Opengraph tags -->
+<meta property="og:title" content="IRFs in Hall Models" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://python.quantecon.org/irfs_in_hall_model.html" />
+<meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
+<meta property="og:description" content="This website presents a set of lectures on dynamic linear economies and tools needed for this this class of economic models." />
+<meta property="og:site_name" content="Dynamic Linear Economies" />
+<meta name="theme-color" content="#ffffff" />
+
+  </head>
+<body>
+
+
+    <span id="top"></span>
+
+    <div class="qe-wrapper">
+
+        <div class="qe-main">
+
+            <div class="qe-page" id=irfs_in_hall_model>
+
+                <div class="qe-page__toc">
+
+                    <div class="inner">
+
+                        
+                        <div class="qe-page__toc-header">
+                            On this page
+                        </div>
+
+
+                        <nav id="bd-toc-nav" class="qe-page__toc-nav">
+                            <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-hall-1978">22.1. Example 1: Hall (1978)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-higher-adjustment-costs">22.2. Example 2: Higher Adjustment Costs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-durable-consumption-goods">22.3. Example 3: Durable Consumption Goods</a></li>
+</ul>
+                            <p class="logo">
+                                
+                                    
+                                    <a href=https://quantecon.org><img src="_static/qe-logo-large.png" class="logo logo-img" alt="logo"></a>
+                                    
+                                    
+                                
+                            </p>
+
+                            <p class="powered">Powered by <a href="https://jupyterbook.org/">Jupyter Book</a></p>
+
+                        </nav>
+
+                        <div class="qe-page__toc-footer">
+                            
+                            
+                            <p><a href="#top"><strong>Back to top</strong></a></p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="qe-page__header">
+
+                    <div class="qe-page__header-copy">
+
+                        <p class="qe-page__header-heading"><a href="intro.html">Dynamic Linear Economies</a></p>
+
+                        <p class="qe-page__header-subheading">IRFs in Hall Models</p>
+
+                    </div>
+                    <!-- length 2, since its a string and empty dict has length 2 - {} -->
+                        <p class="qe-page__header-authors" font-size="18">
+                            
+                                
+                                    <a href="http://www.tomsargent.com/" target="_blank"><span>Thomas J. Sargent</span></a>
+                                
+                            
+                                
+                                    and <a href="https://johnstachurski.net/" target="_blank"><span>John Stachurski</span></a>
+                                
+                            
+                        </p>
+
+
+                </div> <!-- .page__header -->
+
+
+
+                
+                <main class="qe-page__content" role="main">
+                    
+                    <div>
+                        
+  <div id="qe-notebook-header" align="right" style="text-align:right;">
+        <a href="https://quantecon.org/" title="quantecon.org">
+                <img style="width:250px;display:inline;" width="250px" src="https://assets.quantecon.org/img/qe-menubar-logo.svg" alt="QuantEcon">
+        </a>
+</div><section class="tex2jax_ignore mathjax_ignore" id="irfs-in-hall-models">
+<span id="index-0"></span><h1><a class="toc-backref" href="#id3"><span class="section-number">22. </span>IRFs in Hall Models</a><a class="headerlink" href="#irfs-in-hall-models" title="Permalink to this heading">#</a></h1>
+<div class="contents topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#irfs-in-hall-models" id="id3">IRFs in Hall Models</a></p>
+<ul>
+<li><p><a class="reference internal" href="#example-1-hall-1978" id="id4">Example 1: Hall (1978)</a></p></li>
+<li><p><a class="reference internal" href="#example-2-higher-adjustment-costs" id="id5">Example 2: Higher Adjustment Costs</a></p></li>
+<li><p><a class="reference internal" href="#example-3-durable-consumption-goods" id="id6">Example 3: Durable Consumption Goods</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>This is another member of a suite of lectures that use the quantecon DLE class to instantiate models within the
+<span id="id1">[<a class="reference internal" href="zreferences.html#id71" title="Lars Peter Hansen and Thomas J. Sargent. Recursive Linear Models of Dynamic Economics. Princeton University Press, Princeton, New Jersey, 2013.">HS13b</a>]</span> class of models described in detail in <a class="reference internal" href="hs_recursive_models.html"><span class="doc">Recursive Models of Dynamic Linear Economies</span></a>.</p>
+<p>In addition to what’s in Anaconda, this lecture uses the quantecon library.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>quantecon
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: quantecon in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (0.7.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numba&gt;=0.49.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (0.57.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.17.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.24.3)
+Requirement already satisfied: requests in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (2.31.0)
+Requirement already satisfied: scipy&gt;=1.5.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.11.1)
+Requirement already satisfied: sympy in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.11.1)
+Requirement already satisfied: llvmlite&lt;0.41,&gt;=0.40.0dev0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from numba&gt;=0.49.0-&gt;quantecon) (0.40.0)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2.0.4)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (3.4)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (1.26.16)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2023.7.22)
+Requirement already satisfied: mpmath&gt;=0.19 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from sympy-&gt;quantecon) (1.3.0)
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<p>We’ll make these imports:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">from</span> <span class="nn">quantecon</span> <span class="kn">import</span> <span class="n">DLE</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This lecture shows how the DLE class can be used to create impulse
+response functions for three related economies, starting from
+Hall (1978) <span id="id2">[<a class="reference internal" href="zreferences.html#id152" title="Robert E Hall. Stochastic Implications of the Life Cycle-Permanent Income Hypothesis: Theory and Evidence. Journal of Political Economy, 86(6):971–987, 1978.">Hal78</a>]</span>.</p>
+<p>Knowledge of the basic economic environment is assumed.</p>
+<p>See the lecture “Growth in Dynamic Linear Economies” for more details.</p>
+<section id="example-1-hall-1978">
+<h2><a class="toc-backref" href="#id4"><span class="section-number">22.1. </span>Example 1: Hall (1978)</a><a class="headerlink" href="#example-1-hall-1978" title="Permalink to this heading">#</a></h2>
+<p>First, we set parameters to make consumption (almost) follow a random
+walk.</p>
+<p>We set</p>
+<div class="math notranslate nohighlight">
+\[
+\lambda = 0, \pi = 1, \gamma_1 = 0.1, \phi_1 = 0.00001, \delta_k = 0.95, \beta = \frac{1}{1.05}
+\]</div>
+<p>(In this example <span class="math notranslate nohighlight">\(\delta_h\)</span> and <span class="math notranslate nohighlight">\(\theta_h\)</span> are arbitrary as
+household capital does not enter the equation for consumption services.</p>
+<p>We set them to values that will become useful in Example 3)</p>
+<p>It is worth noting that this choice of parameter values ensures that
+<span class="math notranslate nohighlight">\(\beta(\gamma_1 + \delta_k) = 1\)</span>.</p>
+<p>For simulations of this economy, we choose an initial condition of:</p>
+<div class="math notranslate nohighlight">
+\[
+x_0 =
+   \left[ {\begin{array}{ccccc}
+   5 &amp; 150 &amp; 1 &amp; 0 &amp; 0
+   \end{array} }
+   \right]'
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">γ_1</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">γ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">γ_1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">ϕ_c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">ϕ_g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">ϕ_1</span> <span class="o">=</span> <span class="mf">1e-5</span>
+<span class="n">ϕ_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="n">ϕ_1</span><span class="p">]])</span>
+<span class="n">δ_k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">.95</span><span class="p">]])</span>
+<span class="n">θ_k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">β</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span> <span class="o">/</span> <span class="mf">1.05</span><span class="p">]])</span>
+<span class="n">l_λ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">π_h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">δ_h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">.9</span><span class="p">]])</span>
+<span class="n">θ_h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">a22</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span>   <span class="mi">0</span><span class="p">],</span>
+                <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span>   <span class="mi">0</span><span class="p">],</span>
+                <span class="p">[</span><span class="mi">0</span><span class="p">,</span>   <span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]])</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+               <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+               <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">ud</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+               <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">ub</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">150</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+
+<span class="n">info1</span> <span class="o">=</span> <span class="p">(</span><span class="n">a22</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">ub</span><span class="p">,</span> <span class="n">ud</span><span class="p">)</span>
+<span class="n">tech1</span> <span class="o">=</span> <span class="p">(</span><span class="n">ϕ_c</span><span class="p">,</span> <span class="n">ϕ_g</span><span class="p">,</span> <span class="n">ϕ_i</span><span class="p">,</span> <span class="n">γ</span><span class="p">,</span> <span class="n">δ_k</span><span class="p">,</span> <span class="n">θ_k</span><span class="p">)</span>
+<span class="n">pref1</span> <span class="o">=</span> <span class="p">(</span><span class="n">β</span><span class="p">,</span> <span class="n">l_λ</span><span class="p">,</span> <span class="n">π_h</span><span class="p">,</span> <span class="n">δ_h</span><span class="p">,</span> <span class="n">θ_h</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>These parameter values are used to define an economy of the DLE class.</p>
+<p>We can then simulate the economy for a chosen length of time, from our
+initial state vector <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
+<p>The economy stores the simulated values for each variable. Below we plot
+consumption and investment:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">econ1</span> <span class="o">=</span> <span class="n">DLE</span><span class="p">(</span><span class="n">info1</span><span class="p">,</span> <span class="n">tech1</span><span class="p">,</span> <span class="n">pref1</span><span class="p">)</span>
+<span class="n">econ1</span><span class="o">.</span><span class="n">compute_sequence</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">ts_length</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+
+<span class="c1"># This is the right panel of Fig 5.7.1 from p.105 of HS2013</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">econ1</span><span class="o">.</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Cons.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">econ1</span><span class="o">.</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Inv.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/bd244b0eb334a774a250324af133e16bf1145515b60def06671b49112214a2c0.png" src="_images/bd244b0eb334a774a250324af133e16bf1145515b60def06671b49112214a2c0.png" />
+</div>
+</div>
+<p>The DLE class can be used to create impulse response functions for each
+of the endogenous variables: <span class="math notranslate nohighlight">\(\{c_t,s_t,h_t,i_t,k_t,g_t\}\)</span>.</p>
+<p>If no selector vector for the shock is specified, the default choice is
+to give IRFs to the first shock in <span class="math notranslate nohighlight">\(w_{t+1}\)</span>.</p>
+<p>Below we plot the impulse response functions of investment and
+consumption to an endowment innovation (the first shock) in the Hall
+model:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">econ1</span><span class="o">.</span><span class="n">irf</span><span class="p">(</span><span class="n">ts_length</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">shock</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="c1"># This is the left panel of Fig 5.7.1 from p.105 of HS2013</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">econ1</span><span class="o">.</span><span class="n">c_irf</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Cons.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">econ1</span><span class="o">.</span><span class="n">i_irf</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Inv.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/99462f1da910deb518b63a70250e1928bb6e6632cf9a17006f139a67c282ac71.png" src="_images/99462f1da910deb518b63a70250e1928bb6e6632cf9a17006f139a67c282ac71.png" />
+</div>
+</div>
+<p>It can be seen that the endowment shock has permanent effects on the
+level of both consumption and investment, consistent with the endogenous
+unit eigenvalue in this economy.</p>
+<p>Investment is much more responsive to the endowment shock at shorter time
+horizons.</p>
+</section>
+<section id="example-2-higher-adjustment-costs">
+<h2><a class="toc-backref" href="#id5"><span class="section-number">22.2. </span>Example 2: Higher Adjustment Costs</a><a class="headerlink" href="#example-2-higher-adjustment-costs" title="Permalink to this heading">#</a></h2>
+<p>We generate our next economy by making only one change to the parameters
+of Example 1: we raise the parameter associated with the cost of
+adjusting capital,<span class="math notranslate nohighlight">\(\phi_1\)</span>, from 0.00001 to 0.2.</p>
+<p>This will lower the endogenous eigenvalue that is unity in Example 1 to
+a value slightly below 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ϕ_12</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">ϕ_i2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="n">ϕ_12</span><span class="p">]])</span>
+<span class="n">tech2</span> <span class="o">=</span> <span class="p">(</span><span class="n">ϕ_c</span><span class="p">,</span> <span class="n">ϕ_g</span><span class="p">,</span> <span class="n">ϕ_i2</span><span class="p">,</span> <span class="n">γ</span><span class="p">,</span> <span class="n">δ_k</span><span class="p">,</span> <span class="n">θ_k</span><span class="p">)</span>
+
+<span class="n">econ2</span> <span class="o">=</span> <span class="n">DLE</span><span class="p">(</span><span class="n">info1</span><span class="p">,</span> <span class="n">tech2</span><span class="p">,</span> <span class="n">pref1</span><span class="p">)</span>
+<span class="n">econ2</span><span class="o">.</span><span class="n">compute_sequence</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">ts_length</span> <span class="o">=</span> <span class="mi">300</span><span class="p">)</span>
+
+<span class="c1"># This is the right panel of Fig 5.8.1 from p.106 of HS2013</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">econ2</span><span class="o">.</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Cons.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">econ2</span><span class="o">.</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Inv.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/806a0321502aea4a3d613797ea6411944d095e7ffea181b0a6ff4bfd61980c2e.png" src="_images/806a0321502aea4a3d613797ea6411944d095e7ffea181b0a6ff4bfd61980c2e.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">econ2</span><span class="o">.</span><span class="n">irf</span><span class="p">(</span><span class="n">ts_length</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span><span class="n">shock</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="c1"># This is the left panel of Fig 5.8.1 from p.106 of HS2013</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">econ2</span><span class="o">.</span><span class="n">c_irf</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Cons.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">econ2</span><span class="o">.</span><span class="n">i_irf</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Inv.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/764747bf3971e138e0209aa8e5cb5454049a7fae1c6b796a1ab105247ec6afa5.png" src="_images/764747bf3971e138e0209aa8e5cb5454049a7fae1c6b796a1ab105247ec6afa5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">econ2</span><span class="o">.</span><span class="n">endo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.9       , 0.99657126])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">econ2</span><span class="o">.</span><span class="n">compute_steadystate</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">econ2</span><span class="o">.</span><span class="n">css</span><span class="p">,</span> <span class="n">econ2</span><span class="o">.</span><span class="n">iss</span><span class="p">,</span> <span class="n">econ2</span><span class="o">.</span><span class="n">kss</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[5.]] [[2.92940472e-12]] [[5.85879555e-11]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The first graph shows that there seems to be a downward trend in both
+consumption and investment.</p>
+<p>This is a consequence of the decrease in the largest endogenous
+eigenvalue from unity in the earlier economy, caused by the higher
+adjustment cost.</p>
+<p>The present economy has a nonstochastic steady state value of 5 for
+consumption and 0 for both capital and investment.</p>
+<p>Because the largest endogenous eigenvalue is still close to 1, the
+economy heads only slowly towards these mean values.</p>
+<p>The impulse response functions now show that an endowment shock does not
+have a permanent effect on the levels of either consumption or
+investment.</p>
+</section>
+<section id="example-3-durable-consumption-goods">
+<h2><a class="toc-backref" href="#id6"><span class="section-number">22.3. </span>Example 3: Durable Consumption Goods</a><a class="headerlink" href="#example-3-durable-consumption-goods" title="Permalink to this heading">#</a></h2>
+<p>We generate our third economy by raising <span class="math notranslate nohighlight">\(\phi_1\)</span> further, to 1.0.
+We also raise the production function parameter from 0.1 to 0.15 (which
+raises the non-stochastic steady state value of capital above zero).</p>
+<p>We also change the specification of preferences to make the consumption
+good <em>durable</em>.</p>
+<p>Specifically, we allow for a single durable household good obeying:</p>
+<div class="math notranslate nohighlight">
+\[
+h_t = \delta_h h_{t-1} + c_t \, ,  0&lt;\delta_h&lt;1
+\]</div>
+<p>Services are related to the stock of durables at the beginning of the
+period:</p>
+<div class="math notranslate nohighlight">
+\[
+s_t = \lambda h_{t-1} \, ,  \lambda &gt; 0
+\]</div>
+<p>And preferences are ordered by:</p>
+<div class="math notranslate nohighlight">
+\[
+- \frac{1}{2} \mathbb{E} \sum_{t=0}^\infty \beta^t [(\lambda h_{t-1} - b_t)^2 + l_t^2]|J_0
+\]</div>
+<p>To implement this, we set <span class="math notranslate nohighlight">\(\lambda=0.1\)</span> and <span class="math notranslate nohighlight">\(\pi = 0\)</span> (we
+have already set <span class="math notranslate nohighlight">\(\theta_h = 1\)</span> and <span class="math notranslate nohighlight">\(\delta_h = 0.9\)</span>).</p>
+<p>We start from an initial condition that makes consumption begin near
+around its non-stochastic steady state.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ϕ_13</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">ϕ_i3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="n">ϕ_13</span><span class="p">]])</span>
+
+<span class="n">γ_12</span> <span class="o">=</span> <span class="mf">0.15</span>
+<span class="n">γ_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">γ_12</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+
+<span class="n">l_λ2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.1</span><span class="p">]])</span>
+<span class="n">π_h2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">]])</span>
+
+<span class="n">x01</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">150</span><span class="p">],</span> <span class="p">[</span><span class="mi">100</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">]])</span>
+
+<span class="n">tech3</span> <span class="o">=</span> <span class="p">(</span><span class="n">ϕ_c</span><span class="p">,</span> <span class="n">ϕ_g</span><span class="p">,</span> <span class="n">ϕ_i3</span><span class="p">,</span> <span class="n">γ_2</span><span class="p">,</span> <span class="n">δ_k</span><span class="p">,</span> <span class="n">θ_k</span><span class="p">)</span>
+<span class="n">pref2</span> <span class="o">=</span> <span class="p">(</span><span class="n">β</span><span class="p">,</span> <span class="n">l_λ2</span><span class="p">,</span> <span class="n">π_h2</span><span class="p">,</span> <span class="n">δ_h</span><span class="p">,</span> <span class="n">θ_h</span><span class="p">)</span>
+
+<span class="n">econ3</span> <span class="o">=</span> <span class="n">DLE</span><span class="p">(</span><span class="n">info1</span><span class="p">,</span> <span class="n">tech3</span><span class="p">,</span> <span class="n">pref2</span><span class="p">)</span>
+<span class="n">econ3</span><span class="o">.</span><span class="n">compute_sequence</span><span class="p">(</span><span class="n">x01</span><span class="p">,</span> <span class="n">ts_length</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+
+<span class="c1"># This is the right panel of Fig 5.11.1 from p.111 of HS2013</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">econ3</span><span class="o">.</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Cons.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">econ3</span><span class="o">.</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Inv.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a452ba20c4eebb06a99284600b2975a515b61eb56b7a3c3644166e2a33d3c3a9.png" src="_images/a452ba20c4eebb06a99284600b2975a515b61eb56b7a3c3644166e2a33d3c3a9.png" />
+</div>
+</div>
+<p>In contrast to Hall’s original model of Example 1, it is now investment
+that is much smoother than consumption.</p>
+<p>This illustrates how making consumption goods durable tends to undo the
+strong consumption smoothing result that Hall obtained.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">econ3</span><span class="o">.</span><span class="n">irf</span><span class="p">(</span><span class="n">ts_length</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">shock</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="c1"># This is the left panel of Fig 5.11.1 from p.111 of HS2013</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">econ3</span><span class="o">.</span><span class="n">c_irf</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Cons.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">econ3</span><span class="o">.</span><span class="n">i_irf</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Inv.&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/94397103be3432870e507d31e799c41eec339071b6e155d5f1a29ec6df19d893.png" src="_images/94397103be3432870e507d31e799c41eec339071b6e155d5f1a29ec6df19d893.png" />
+</div>
+</div>
+<p>The impulse response functions confirm that consumption is now much more
+responsive to an endowment shock (and investment less so) than in
+Example 1.</p>
+<p>As in Example 2, the endowment shock has permanent effects on
+neither variable.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                    </div>
+                    
+                </main> <!-- .page__content -->
+                
+
+
+                <footer class="qe-page__footer">
+
+                    <p><a href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/80x15.png"></a></p>
+
+                    <p>Creative Commons License &ndash; This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International.</p>
+
+                </footer> <!-- .page__footer -->
+
+            </div> <!-- .page -->
+
+            
+
+            
+            <div class="qe-sidebar bd-sidebar inactive" id="site-navigation">
+
+                <div class="qe-sidebar__header">
+
+
+                    Contents
+
+                </div>
+
+                <nav class="qe-sidebar__nav" id="qe-sidebar-nav" aria-label="Main navigation">
+                    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Kalman Filter
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="kalman.html">
+   1. A First Look at the Kalman Filter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="kalman_2.html">
+   2. Another Look at the Kalman Filter
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="muth_kalman.html">
+   3. Reverse Engineering a la Muth
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  LQ Control
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lqcontrol.html">
+   4. LQ Control: Foundations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lagrangian_lqdp.html">
+   5. Lagrangian for LQ Control
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cross_product_trick.html">
+   6. Eliminating Cross Products
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="perm_income.html">
+   7. The Permanent Income Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="perm_income_cons.html">
+   8. Permanent Income II: LQ Techniques
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lq_inventories.html">
+   9. Production Smoothing via Inventories
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cons_news.html">
+   10. Information and Consumption Smoothing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="smoothing.html">
+   11. Consumption Smoothing with Complete and Incomplete Markets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="smoothing_tax.html">
+   12. Tax Smoothing with Complete and Incomplete Markets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="markov_jump_lq.html">
+   13. Markov Jump Linear Quadratic Dynamic Programming
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tax_smoothing_1.html">
+   14. How to Pay for a War: Part 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tax_smoothing_2.html">
+   15. How to Pay for a War: Part 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tax_smoothing_3.html">
+   16. How to Pay for a War: Part 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lqramsey.html">
+   17. Optimal Taxation in an LQ Economy
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Dynamic Linear Economies
+ </span>
+</p>
+<ul class="current nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_models.html">
+   18. Linear State Space Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hs_recursive_models.html">
+   19. Recursive Models of Dynamic Linear Economies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="growth_in_dles.html">
+   20. Growth in Dynamic Linear Economies
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lucas_asset_pricing_dles.html">
+   21. Lucas Asset Pricing Using DLE
+  </a>
+ </li>
+ <li class="toctree-l1 current active active">
+  <a class="current reference internal" href="#">
+   22. IRFs in Hall Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="permanent_income_dles.html">
+   23. Permanent Income Model using the DLE Class
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="rosen_schooling_model.html">
+   24. Rosen Schooling Model
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cattle_cycles.html">
+   25. Cattle Cycles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="hs_invertibility_example.html">
+   26. Shock Non Invertibility
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Other
+ </span>
+</p>
+<ul class="nav bd-sidenav nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="troubleshooting.html">
+   27. Troubleshooting
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="zreferences.html">
+   28. References
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="status.html">
+   29. Execution Statistics
+  </a>
+ </li>
+</ul>
+
+                </nav>
+
+                <div class="qe-sidebar__footer">
+
+                </div>
+
+            </div> <!-- .sidebar -->
+            
+        </div> <!-- .main -->
+
+        <div class="qe-toolbar">
+
+            <div class="qe-toolbar__inner">
+
+                <ul class="qe-toolbar__main">
+                    <li data-tippy-content="Table of Contents" class="btn__sidebar"><i data-feather="menu"></i></li>
+                    <li data-tippy-content="Home"><a href="intro.html"><i data-feather="home"></i></a></li>
+                    <li class="btn__qelogo"><a href="https://quantecon.org" title=""><span class="show-for-sr">QuantEcon</span></a></li>
+                </ul>
+
+                <ul class="qe-toolbar__links">
+                    <li class="btn__search">
+                        <form action="search.html" method="get">
+                            <input type="search" class="form-control" name="q" id="search-input" placeholder="Search..." aria-label="Search..." autocomplete="off" accesskey="k">
+                            <i data-feather="search" id="search-icon"></i>
+                        </form>
+                    </li>
+                    <li data-tippy-content="Fullscreen" class="btn__fullscreen"><i data-feather="maximize"></i></li>
+                    <li data-tippy-content="Increase font size" class="btn__plus"><i data-feather="plus-circle"></i></li>
+                    <li data-tippy-content="Decrease font size" class="btn__minus"><i data-feather="minus-circle"></i></li>
+                    <li data-tippy-content="Change contrast" class="btn__contrast"><i data-feather="sunset"></i></li>
+                    <li data-tippy-content="Download Notebook"><a href="/_notebooks/irfs_in_hall_model.ipynb" download><i data-feather="download-cloud"></i></a></li>
+                    <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
+                        <li class="download-pdf" id="downloadButton"><i data-feather="file"></i></li>
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-dle.myst/irfs_in_hall_model.md" download><i data-feather="github"></i></a></li>
+                </ul>
+
+            </div>
+
+        </div> <!-- .toolbar -->
+        <div id="downloadPDFModal" style="display: none;">
+            <ul class="pdf-options" style="display: block;">
+                <li class="download-pdf-book" onClick="window.print()">
+                    <p>Lecture (PDF)</p>
+                </li>
+                <li class="download-pdf-file">
+                    <a href="/_pdf/quantecon-dle.pdf" download><p>Book (PDF)</p></a>
+                </li>
+            </ul>
+        </div>
+        <div id="settingsModal" style="display: none;">
+            <p class="modal-title"> Notebook Launcher </p>
+            <div class="modal-desc">
+            <p>
+                Choose public or private cloud service for "Launch" button.
+            </p>
+            </div>
+            <p class="modal-subtitle">Select a server</p>
+            <ul class="modal-servers">
+            <li class="active launcher-public">
+                <span class="label">Public</span>
+                <select id="launcher-public-input">
+                
+                    <option value="https://colab.research.google.com/github/QuantEcon/lecture-dle.notebooks/blob/master/irfs_in_hall_model.ipynb">Colab</option>
+                
+                </select>
+                <i class="fas fa-check-circle"></i>
+            </li>
+            <li class="launcher-private">
+                <span class="label">Private</span>
+                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-dle.notebooks" data-urlpath="tree/lecture-dle.notebooks/irfs_in_hall_model.ipynb" data-branch=master>
+                <i class="fas fa-check-circle"></i>
+            </li>
+            </ul>
+            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-dle.notebooks/blob/master/irfs_in_hall_model.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <script>
+                // QuantEcon Notebook Launcher
+                const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
+                // Highlight the server type if previous selection exists
+                if (typeof localStorage.launcherType !== 'undefined') {
+                  for (var i = 0; i < launcherTypeElements.length; i++) {
+                    launcherTypeElements[i].classList.remove('active');
+                    if ( launcherTypeElements[i].classList.contains(localStorage.launcherType) ) {
+                      launcherTypeElements[i].classList.add('active');
+                    }
+                  }
+                }
+                // Highlight server type on click and set local storage value
+                for (var i = 0; i < launcherTypeElements.length; i++) {
+                  launcherTypeElements[i].addEventListener('click', function() {
+                    for (var j = 0; j < launcherTypeElements.length; j++) {
+                      launcherTypeElements[j].classList.remove('active');
+                    }
+                    this.classList.add('active');
+                    if ( this.classList.contains('launcher-private') ) {
+                      localStorage.launcherType = 'launcher-private';
+                    } else if ( this.classList.contains('launcher-public') ) {
+                      localStorage.launcherType = 'launcher-public';
+                    }
+                    setLaunchServer();
+                  })
+                }
+                const launcherPublic = document.getElementById('launcher-public-input');
+                const launcherPrivate = document.getElementById('launcher-private-input');
+                const pageName = "irfs_in_hall_model";
+                const repoURL = "https://github.com/QuantEcon/lecture-dle.notebooks";
+                const urlPath = "tree/lecture-dle.notebooks/irfs_in_hall_model.ipynb";
+                const branch = "master"
+                const launchNotebookLink = document.getElementById('advancedLaunchButton');
+
+                // Highlight public server option if previous selection exists
+                if (typeof localStorage.launcherPublic !== 'undefined') {
+                  launcherPublic.value = localStorage.launcherPublic;
+                }
+                // Update local storage upon public server selection
+                launcherPublic.addEventListener('change', (event) => {
+                  setLaunchServer();
+                });
+                // Populate private server input if previous entry exists
+                if (typeof localStorage.launcherPrivate !== 'undefined') {
+                  launcherPrivate.value = localStorage.launcherPrivate;
+                }
+                // Update local storage when a private server is entered
+                launcherPrivate.addEventListener('input', (event) => {
+                  setLaunchServer();
+                });
+
+                // Function to update the "Launch Notebook" link href
+                function setLaunchServer() {
+                  launchNotebookLink.removeAttribute("style")
+                  if ( localStorage.launcherType == 'launcher-private' ) {
+                    let repoPrefix = "/jupyter/hub/user-redirect/git-pull?repo=" + repoURL + "&branch=" + branch + "&urlpath=" + urlPath;
+                    launcherPrivateValue = launcherPrivate.value
+                    if (!launcherPrivateValue) {
+                        launchNotebookLink.removeAttribute("href")
+                        launchNotebookLink.style.background = "grey"
+                        return
+                    }
+                    localStorage.launcherPrivate = launcherPrivateValue;
+                    privateServer = localStorage.launcherPrivate.replace(/\/$/, "")
+                    if (!privateServer.includes("http")) {
+                        privateServer = "http://" + privateServer
+                    }
+                    launchNotebookLinkURL = privateServer + repoPrefix;
+                  } else if ( localStorage.launcherType == 'launcher-public' ) {
+                    launcherPublicValue = launcherPublic.options[launcherPublic.selectedIndex].value;
+                    localStorage.launcherPublic = launcherPublicValue;
+                    launchNotebookLinkURL = localStorage.launcherPublic;
+                  }
+                  if (launchNotebookLinkURL) launchNotebookLink.href = launchNotebookLinkURL;
+                }
+                // Check if user has previously selected a server
+                if ( (typeof localStorage.launcherPrivate !== 'undefined') || (typeof localStorage.launcherPublic !== 'undefined') ) {
+                  setLaunchServer();
+                }
+                </script>
+
+        </div>
+
+    </div> <!-- .wrapper-->
+  </body>
+</html>
