@@ -100,6 +100,13 @@
     <script src="_static/scripts/quantecon-book-theme.js?digest=eed9c059a3ee152aae2353ec732f0a6d12e6aa07"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-D5TQMHKC2V"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-D5TQMHKC2V');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -109,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"tex": {"macros": {"argmax": "arg\\,max", "argmin": "arg\\,min"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'lqcontrol';</script>
-    <link rel="canonical" href="https://python.quantecon.org/lqcontrol.html" />
+    <link rel="canonical" href="https://dle.quantecon.org/lqcontrol.html" />
     <link rel="shortcut icon" href="_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -132,7 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
 <!-- Opengraph tags -->
 <meta property="og:title" content="LQ Control: Foundations" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://python.quantecon.org/lqcontrol.html" />
+<meta property="og:url" content="https://dle.quantecon.org/lqcontrol.html" />
 <meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
 <meta property="og:description" content="This website presents a set of lectures on dynamic linear economies and tools needed for this this class of economic models." />
 <meta property="og:site_name" content="Dynamic Linear Economies" />
@@ -297,9 +304,7 @@ Requirement already satisfied: numpy&gt;=1.17.0 in /home/runner/miniconda3/envs/
 Requirement already satisfied: requests in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (2.31.0)
 Requirement already satisfied: scipy&gt;=1.5.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.11.1)
 Requirement already satisfied: sympy in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.11.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: llvmlite&lt;0.41,&gt;=0.40.0dev0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from numba&gt;=0.49.0-&gt;quantecon) (0.40.0)
+Requirement already satisfied: llvmlite&lt;0.41,&gt;=0.40.0dev0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from numba&gt;=0.49.0-&gt;quantecon) (0.40.0)
 Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2.0.4)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (3.4)
 Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (1.26.16)
@@ -833,7 +838,7 @@ consumption can be simulated via <a class="reference internal" href="#equation-l
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9203a691878b17aa208b68e08bc4d2df3b5a1dcab965d7eb0a031692e107202a.png" src="_images/9203a691878b17aa208b68e08bc4d2df3b5a1dcab965d7eb0a031692e107202a.png" />
+<img alt="_images/91c8e954951208a21f4d2b1214cb63892a3123ed6d7556172a59eead5181f12f.png" src="_images/91c8e954951208a21f4d2b1214cb63892a3123ed6d7556172a59eead5181f12f.png" />
 </div>
 </div>
 <p>The top panel shows the time path of consumption <span class="math notranslate nohighlight">\(c_t\)</span> and income <span class="math notranslate nohighlight">\(y_t\)</span> in the simulation.</p>
@@ -895,7 +900,7 @@ relatively more weight on later consumption values.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8ed5fd0ece9641b11c112d70f2da80d302c8545f224e5698167c7ff47f8b7740.png" src="_images/8ed5fd0ece9641b11c112d70f2da80d302c8545f224e5698167c7ff47f8b7740.png" />
+<img alt="_images/8043aa2623e53244820ff52eb1ab6be03cc6df25a077d22732f6955e69788b90.png" src="_images/8043aa2623e53244820ff52eb1ab6be03cc6df25a077d22732f6955e69788b90.png" />
 </div>
 </div>
 <p>We now have a slowly rising consumption stream and a hump-shaped build-up
@@ -1322,7 +1327,7 @@ y_t = m_1 t + m_2 t^2 + \sigma w_{t+1}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/96093c66625aaf53b8a144c656f51fdd1aec1ba44702f9f6f50c35986e5952ae.png" src="_images/96093c66625aaf53b8a144c656f51fdd1aec1ba44702f9f6f50c35986e5952ae.png" />
+<img alt="_images/90aaf4f976b4a7b949a3c88b7f9a88c138f99bc13d7ab9e0b8321f020a0bb515.png" src="_images/90aaf4f976b4a7b949a3c88b7f9a88c138f99bc13d7ab9e0b8321f020a0bb515.png" />
 </div>
 </div>
 </section>
@@ -1463,7 +1468,7 @@ the lecture.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d4af87be4f8490d31392fac8fc6d4e9b3d950f55294c8d0abcf1b874c70b33b8.png" src="_images/d4af87be4f8490d31392fac8fc6d4e9b3d950f55294c8d0abcf1b874c70b33b8.png" />
+<img alt="_images/18ce056ad3d887f6571a044cb18c4a6ef8641f5a59964c5d8f82b8368feb4556.png" src="_images/18ce056ad3d887f6571a044cb18c4a6ef8641f5a59964c5d8f82b8368feb4556.png" />
 </div>
 </div>
 </section>
@@ -1570,7 +1575,7 @@ function, which we repeat here for convenience:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1d49a551c8372150a58083649d88e1eeb68a97698746c644a0af37f2ce8292ae.png" src="_images/1d49a551c8372150a58083649d88e1eeb68a97698746c644a0af37f2ce8292ae.png" />
+<img alt="_images/a17ae4e4b17b1ed07f6102f3b1a5c3ffa1b418fa0fa423ca905fdebc522cbf88.png" src="_images/a17ae4e4b17b1ed07f6102f3b1a5c3ffa1b418fa0fa423ca905fdebc522cbf88.png" />
 </div>
 </div>
 </section>

@@ -100,6 +100,13 @@
     <script src="_static/scripts/quantecon-book-theme.js?digest=eed9c059a3ee152aae2353ec732f0a6d12e6aa07"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-D5TQMHKC2V"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-D5TQMHKC2V');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -109,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"tex": {"macros": {"argmax": "arg\\,max", "argmin": "arg\\,min"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'linear_models';</script>
-    <link rel="canonical" href="https://python.quantecon.org/linear_models.html" />
+    <link rel="canonical" href="https://dle.quantecon.org/linear_models.html" />
     <link rel="shortcut icon" href="_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -132,7 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
 <!-- Opengraph tags -->
 <meta property="og:title" content="Linear State Space Models" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://python.quantecon.org/linear_models.html" />
+<meta property="og:url" content="https://dle.quantecon.org/linear_models.html" />
 <meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
 <meta property="og:description" content="This website presents a set of lectures on dynamic linear economies and tools needed for this this class of economic models." />
 <meta property="og:site_name" content="Dynamic Linear Economies" />
@@ -314,15 +321,15 @@ const thebe_selector_output = ".output, .cell_output"
 </summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: quantecon in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (0.7.1)
-Requirement already satisfied: numba&gt;=0.49.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (0.57.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numba&gt;=0.49.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (0.57.1)
 Requirement already satisfied: numpy&gt;=1.17.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.24.3)
 Requirement already satisfied: requests in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (2.31.0)
 Requirement already satisfied: scipy&gt;=1.5.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.11.1)
 Requirement already satisfied: sympy in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.11.1)
 Requirement already satisfied: llvmlite&lt;0.41,&gt;=0.40.0dev0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from numba&gt;=0.49.0-&gt;quantecon) (0.40.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2.0.4)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2.0.4)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (3.4)
 Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (1.26.16)
 Requirement already satisfied: certifi&gt;=2017.4.17 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2023.7.22)
@@ -554,7 +561,7 @@ y_{-3} = 1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ab6433c1168a7ee0f8ae662eebba0090e42b99c4ecbd8bbb471d194e6bab4ee4.png" src="_images/ab6433c1168a7ee0f8ae662eebba0090e42b99c4ecbd8bbb471d194e6bab4ee4.png" />
+<img alt="_images/f383b7c1ee681e2bcc8d9822257628b2a2e70755733f95f2747a4cebf0c1d29f.png" src="_images/f383b7c1ee681e2bcc8d9822257628b2a2e70755733f95f2747a4cebf0c1d29f.png" />
 </div>
 </div>
 </section>
@@ -885,7 +892,7 @@ shocks each time.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fe94f1e3e22ea7aeea65f12922f29d1f3d6610b1ec314b612ae2ef5cfd3360ff.png" src="_images/fe94f1e3e22ea7aeea65f12922f29d1f3d6610b1ec314b612ae2ef5cfd3360ff.png" />
+<img alt="_images/5bc1ae789d5be09a4476c339e6212208815356dffe90c94f6d2566ae0feae040.png" src="_images/5bc1ae789d5be09a4476c339e6212208815356dffe90c94f6d2566ae0feae040.png" />
 </div>
 </div>
 <p>In the right-hand figure, these values are converted into a rotated histogram
@@ -899,7 +906,7 @@ that shows relative frequencies from our sample of 20 <span class="math notransl
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/07ff8579cd4f903172bc8cdc533a65dc0a26288a41f3c3504377ad4576fb3ca2.png" src="_images/07ff8579cd4f903172bc8cdc533a65dc0a26288a41f3c3504377ad4576fb3ca2.png" />
+<img alt="_images/50fcedd466c002e56e3d05745331f69e07755c54816b664d40bcef1b5bd0611e.png" src="_images/50fcedd466c002e56e3d05745331f69e07755c54816b664d40bcef1b5bd0611e.png" />
 </div>
 </div>
 <p>Let’s now try with 500,000 observations, showing only the histogram (without rotation)</p>
@@ -929,7 +936,7 @@ that shows relative frequencies from our sample of 20 <span class="math notransl
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4a0fa6ab3a4985d50442ecb7f7fff9a8456e25dbe39b37e7bf824f82fc249939.png" src="_images/4a0fa6ab3a4985d50442ecb7f7fff9a8456e25dbe39b37e7bf824f82fc249939.png" />
+<img alt="_images/88ce59ffd0ad3666906204568e774d7e08233f41ef1c1583d20d5daece42d152.png" src="_images/88ce59ffd0ad3666906204568e774d7e08233f41ef1c1583d20d5daece42d152.png" />
 </div>
 </div>
 <p>The black line is the population density of <span class="math notranslate nohighlight">\(y_T\)</span> calculated from <a class="reference internal" href="#equation-lss-mgs-y">(18.12)</a>.</p>
@@ -991,7 +998,7 @@ and the sample size is relatively small (<span class="math notranslate nohighlig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a3da23a18d31e5d3a056e21d40986715ab016a9720a8d3729a5e3aaf7c0e5d30.png" src="_images/a3da23a18d31e5d3a056e21d40986715ab016a9720a8d3729a5e3aaf7c0e5d30.png" />
+<img alt="_images/84d4e1a0aa260226d77395db4805b8aa8c16125b2b86d1e5e731872a9fa4db9e.png" src="_images/84d4e1a0aa260226d77395db4805b8aa8c16125b2b86d1e5e731872a9fa4db9e.png" />
 </div>
 </div>
 <p>The ensemble mean for <span class="math notranslate nohighlight">\(x_t\)</span> is</p>
@@ -1111,7 +1118,7 @@ p(x_{t+1} \,|\, x_t) = N(Ax_t, C C')
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/86435023e4e131f0cac5f0577797b3b00fcf06929eb62ce4641389ea5baa05d8.png" src="_images/86435023e4e131f0cac5f0577797b3b00fcf06929eb62ce4641389ea5baa05d8.png" />
+<img alt="_images/968262eaa5b118989d16708fca7f2316483826741a8e2d2453b75927af551a1f.png" src="_images/968262eaa5b118989d16708fca7f2316483826741a8e2d2453b75927af551a1f.png" />
 </div>
 </div>
 <p>Note how the time series “settle down” in the sense that the distributions at
@@ -1155,7 +1162,7 @@ x_{t+1} \sim \psi_{\infty}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ec129e91aff6802b41d94a65a3006194b435d30337905d66092a425780e19234.png" src="_images/ec129e91aff6802b41d94a65a3006194b435d30337905d66092a425780e19234.png" />
+<img alt="_images/043656fd35d1b0bb71e27fc5a97adce5d487af049c4dc500aa5aa605f93f6b44.png" src="_images/043656fd35d1b0bb71e27fc5a97adce5d487af049c4dc500aa5aa605f93f6b44.png" />
 </div>
 </div>
 <p>Now the  differences in the observed distributions at <span class="math notranslate nohighlight">\(T, T'\)</span> and <span class="math notranslate nohighlight">\(T''\)</span> come entirely from random fluctuations due to the finite sample size.</p>
