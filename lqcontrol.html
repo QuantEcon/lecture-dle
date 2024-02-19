@@ -126,13 +126,13 @@ const thebe_selector_output = ".output, .cell_output"
 <!-- Normal Meta Tags -->
 <meta name="author" context="Thomas J. Sargent and John Stachurski" />
 <meta name="keywords" content="Python, QuantEcon, Quantitative Economics, Economics, Sloan, Alfred P. Sloan Foundation, Tom J. Sargent, John Stachurski" />
-<meta name="description" content=This website presents a set of lectures on dynamic linear economies and tools needed for this this class of economic models. />
+<meta name="description" content=This website presents a set of lectures on dynamic linear economies and tools needed for this class of economic models. />
 
 <!-- Twitter tags -->
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@quantecon" />
 <meta name="twitter:title" content="LQ Control: Foundations"/>
-<meta name="twitter:description" content="This website presents a set of lectures on dynamic linear economies and tools needed for this this class of economic models.">
+<meta name="twitter:description" content="This website presents a set of lectures on dynamic linear economies and tools needed for this class of economic models.">
 <meta name="twitter:creator" content="@quantecon">
 <meta name="twitter:image" content="https://assets.quantecon.org/img/qe-twitter-logo.png">
 
@@ -141,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://dle.quantecon.org/lqcontrol.html" />
 <meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
-<meta property="og:description" content="This website presents a set of lectures on dynamic linear economies and tools needed for this this class of economic models." />
+<meta property="og:description" content="This website presents a set of lectures on dynamic linear economies and tools needed for this class of economic models." />
 <meta property="og:site_name" content="Dynamic Linear Economies" />
 <meta name="theme-color" content="#ffffff" />
 
@@ -305,7 +305,9 @@ Requirement already satisfied: requests in /home/runner/miniconda3/envs/quanteco
 Requirement already satisfied: scipy&gt;=1.5.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.11.1)
 Requirement already satisfied: sympy in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.11.1)
 Requirement already satisfied: llvmlite&lt;0.41,&gt;=0.40.0dev0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from numba&gt;=0.49.0-&gt;quantecon) (0.40.0)
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2.0.4)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2.0.4)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (3.4)
 Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (1.26.16)
 Requirement already satisfied: certifi&gt;=2017.4.17 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2023.7.22)
@@ -331,7 +333,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /home/runner/miniconda3/envs/q
 <ul class="simple">
 <li><p>matrix manipulations</p></li>
 <li><p>vectors of random variables</p></li>
-<li><p>dynamic programming and the Bellman equation (see for example <a class="reference external" href="https://intro.quantecon.org/short_path.html" title="(in Python)"><span class="xref std std-doc">this lecture</span></a> and <a class="reference external" href="https://quantecon.github.io/lecture-dynamics/optgrowth.html" title="(in Python)"><span class="xref std std-doc">this lecture</span></a>)</p></li>
+<li><p>dynamic programming and the Bellman equation (see for example <a class="reference external" href="https://intro.quantecon.org/short_path.html" title="(in Python)"><span class="xref std std-doc">this lecture</span></a> and <a class="reference external" href="https://dynamics.quantecon.org/optgrowth.html" title="(in Python)"><span class="xref std std-doc">this lecture</span></a>)</p></li>
 </ul>
 <p>For additional reading on LQ control, see, for example,</p>
 <ul class="simple">
@@ -409,7 +411,7 @@ to the deviation of consumption from some “ideal” quantity <span class="math
 <p>If, as in the previous example, we take <span class="math notranslate nohighlight">\(a_t\)</span> as the state, then we run into a problem:
 the law of motion contains some constant terms on the right-hand side.</p>
 <p>This means that we are dealing with an <em>affine</em> function, not a linear one
-(recall <a class="reference external" href="https://quantecon.github.io/lecture-tools-techniques/linear_algebra.html#la-linear-map" title="(in Python)"><span class="xref std std-ref">this discussion</span></a>).</p>
+(recall <a class="reference external" href="https://tools-techniques.quantecon.org/linear_algebra.html#la-linear-map" title="(in Python)"><span class="xref std std-ref">this discussion</span></a>).</p>
 <p>Fortunately, we can easily circumvent this problem by adding an extra state variable.</p>
 <p>In particular, if we write</p>
 <div class="math notranslate nohighlight" id="equation-lq-lowmc">
@@ -651,7 +653,7 @@ x' R x + u' Q u + \beta \,
 \mathbb E (A x + B u + C w_T)' P_T (A x + B u + C w_T)
 \}\]</div>
 <p>To obtain the minimizer, we can take the derivative of the r.h.s. with respect to <span class="math notranslate nohighlight">\(u\)</span> and set it equal to zero.</p>
-<p>Applying the relevant rules of <a class="reference external" href="https://quantecon.github.io/lecture-tools-techniques/linear_algebra.html#la-mcalc" title="(in Python)"><span class="xref std std-ref">matrix calculus</span></a>, this gives</p>
+<p>Applying the relevant rules of <a class="reference external" href="https://tools-techniques.quantecon.org/linear_algebra.html#la-mcalc" title="(in Python)"><span class="xref std std-ref">matrix calculus</span></a>, this gives</p>
 <div class="math notranslate nohighlight" id="equation-lq-oc0">
 <span class="eqno">(4.9)<a class="headerlink" href="#equation-lq-oc0" title="Permalink to this equation">#</a></span>\[u  = - (Q + \beta B' P_T B)^{-1} \beta B' P_T A x\]</div>
 <p>Plugging this back into <a class="reference internal" href="#equation-lq-fswb">(4.8)</a> and rearranging yields</p>
@@ -838,7 +840,7 @@ consumption can be simulated via <a class="reference internal" href="#equation-l
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/91c8e954951208a21f4d2b1214cb63892a3123ed6d7556172a59eead5181f12f.png" src="_images/91c8e954951208a21f4d2b1214cb63892a3123ed6d7556172a59eead5181f12f.png" />
+<img alt="_images/1a5b715789616edc96472573840dce8766b521bb5270b11bfcd8231c4914a41d.png" src="_images/1a5b715789616edc96472573840dce8766b521bb5270b11bfcd8231c4914a41d.png" />
 </div>
 </div>
 <p>The top panel shows the time path of consumption <span class="math notranslate nohighlight">\(c_t\)</span> and income <span class="math notranslate nohighlight">\(y_t\)</span> in the simulation.</p>
@@ -900,7 +902,7 @@ relatively more weight on later consumption values.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8043aa2623e53244820ff52eb1ab6be03cc6df25a077d22732f6955e69788b90.png" src="_images/8043aa2623e53244820ff52eb1ab6be03cc6df25a077d22732f6955e69788b90.png" />
+<img alt="_images/bd8475a7bd4f8be54e10bb4371fb4909edf0b0bf3d6f73a2586b989eb09ae675.png" src="_images/bd8475a7bd4f8be54e10bb4371fb4909edf0b0bf3d6f73a2586b989eb09ae675.png" />
 </div>
 </div>
 <p>We now have a slowly rising consumption stream and a hump-shaped build-up
@@ -1327,7 +1329,7 @@ y_t = m_1 t + m_2 t^2 + \sigma w_{t+1}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/90aaf4f976b4a7b949a3c88b7f9a88c138f99bc13d7ab9e0b8321f020a0bb515.png" src="_images/90aaf4f976b4a7b949a3c88b7f9a88c138f99bc13d7ab9e0b8321f020a0bb515.png" />
+<img alt="_images/c1885c59fb29cd67532312bb1cf75358b037f48fdb0f3ae07273cbb04fe80019.png" src="_images/c1885c59fb29cd67532312bb1cf75358b037f48fdb0f3ae07273cbb04fe80019.png" />
 </div>
 </div>
 </section>
@@ -1468,7 +1470,7 @@ the lecture.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/18ce056ad3d887f6571a044cb18c4a6ef8641f5a59964c5d8f82b8368feb4556.png" src="_images/18ce056ad3d887f6571a044cb18c4a6ef8641f5a59964c5d8f82b8368feb4556.png" />
+<img alt="_images/4f8a1a9925915164ff2c8548cb8c5fddfa6ad21418c08c3d64ddf3eccad4f4e8.png" src="_images/4f8a1a9925915164ff2c8548cb8c5fddfa6ad21418c08c3d64ddf3eccad4f4e8.png" />
 </div>
 </div>
 </section>
@@ -1575,7 +1577,7 @@ function, which we repeat here for convenience:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a17ae4e4b17b1ed07f6102f3b1a5c3ffa1b418fa0fa423ca905fdebc522cbf88.png" src="_images/a17ae4e4b17b1ed07f6102f3b1a5c3ffa1b418fa0fa423ca905fdebc522cbf88.png" />
+<img alt="_images/8adec97e85077fb48ef41fd15557ffd04d0d0f48f437e2e5439b8edec80cb568.png" src="_images/8adec97e85077fb48ef41fd15557ffd04d0d0f48f437e2e5439b8edec80cb568.png" />
 </div>
 </div>
 </section>

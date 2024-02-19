@@ -126,13 +126,13 @@ const thebe_selector_output = ".output, .cell_output"
 <!-- Normal Meta Tags -->
 <meta name="author" context="Thomas J. Sargent and John Stachurski" />
 <meta name="keywords" content="Python, QuantEcon, Quantitative Economics, Economics, Sloan, Alfred P. Sloan Foundation, Tom J. Sargent, John Stachurski" />
-<meta name="description" content=This website presents a set of lectures on dynamic linear economies and tools needed for this this class of economic models. />
+<meta name="description" content=This website presents a set of lectures on dynamic linear economies and tools needed for this class of economic models. />
 
 <!-- Twitter tags -->
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@quantecon" />
 <meta name="twitter:title" content="Permanent Income II: LQ Techniques"/>
-<meta name="twitter:description" content="This website presents a set of lectures on dynamic linear economies and tools needed for this this class of economic models.">
+<meta name="twitter:description" content="This website presents a set of lectures on dynamic linear economies and tools needed for this class of economic models.">
 <meta name="twitter:creator" content="@quantecon">
 <meta name="twitter:image" content="https://assets.quantecon.org/img/qe-twitter-logo.png">
 
@@ -141,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://dle.quantecon.org/perm_income_cons.html" />
 <meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
-<meta property="og:description" content="This website presents a set of lectures on dynamic linear economies and tools needed for this this class of economic models." />
+<meta property="og:description" content="This website presents a set of lectures on dynamic linear economies and tools needed for this class of economic models." />
 <meta property="og:site_name" content="Dynamic Linear Economies" />
 <meta name="theme-color" content="#ffffff" />
 
@@ -290,7 +290,9 @@ Requirement already satisfied: requests in /home/runner/miniconda3/envs/quanteco
 Requirement already satisfied: scipy&gt;=1.5.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.11.1)
 Requirement already satisfied: sympy in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.11.1)
 Requirement already satisfied: llvmlite&lt;0.41,&gt;=0.40.0dev0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from numba&gt;=0.49.0-&gt;quantecon) (0.40.0)
-Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2.0.4)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2.0.4)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (3.4)
 Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (1.26.16)
 Requirement already satisfied: certifi&gt;=2017.4.17 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2023.7.22)
@@ -321,7 +323,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /home/runner/miniconda3/envs/q
 </ul>
 <p>We’ll then use these characterizations to construct a simple model of cross-section wealth and
 consumption dynamics in the spirit of Truman Bewley <span id="id3">[<a class="reference internal" href="zreferences.html#id100" title="Truman F Bewley. Stationary monetary equilibrium with a continuum of independently fluctuating consumers. In Werner Hildenbran and Andreu Mas-Colell, editors, Contributions to Mathematical Economics in Honor of Gerard Debreu, pages 27-102. North-Holland, Amsterdam, 1986.">Bew86</a>]</span>.</p>
-<p>(Later we’ll study other Bewley models—see <a class="reference external" href="https://quantecon.github.io/lecture-eqm/aiyagari.html" title="(in Python)"><span class="xref std std-doc">this lecture</span></a>.)</p>
+<p>(Later we’ll study other Bewley models—see <a class="reference external" href="https://eqm.quantecon.org/aiyagari.html" title="(in Python)"><span class="xref std std-doc">this lecture</span></a>.)</p>
 <p>The model will prove useful for illustrating concepts such as</p>
 <ul class="simple">
 <li><p>stationarity</p></li>
@@ -753,7 +755,7 @@ pronounced transients early in the sample</p>
 <p>We generate  25 paths of the exogenous non-financial income process and the associated optimal consumption and debt paths.</p>
 <p>In the first set of graphs,  darker lines depict a particular sample path, while the lighter lines describe 24 other  paths.</p>
 <p>A second graph  plots a collection of simulations against the population distribution that we extract from the <code class="docutils literal notranslate"><span class="pre">LinearStateSpace</span></code> instance <code class="docutils literal notranslate"><span class="pre">LSS</span></code>.</p>
-<p>Comparing sample paths with population distributions at each date <span class="math notranslate nohighlight">\(t\)</span> is a useful exercise—see <a class="reference external" href="https://quantecon.github.io/lecture-stats/lln_clt.html#lln-mr" title="(in Python)"><span class="xref std std-ref">our discussion</span></a> of the laws of large numbers</p>
+<p>Comparing sample paths with population distributions at each date <span class="math notranslate nohighlight">\(t\)</span> is a useful exercise—see <a class="reference external" href="https://stats.quantecon.org/lln_clt.html#lln-mr" title="(in Python)"><span class="xref std std-ref">our discussion</span></a> of the laws of large numbers</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lss</span> <span class="o">=</span> <span class="n">qe</span><span class="o">.</span><span class="n">LinearStateSpace</span><span class="p">(</span><span class="n">A_LSS</span><span class="p">,</span> <span class="n">C_LSS</span><span class="p">,</span> <span class="n">G_LSS</span><span class="p">,</span> <span class="n">mu_0</span><span class="o">=</span><span class="n">μ_0</span><span class="p">,</span> <span class="n">Sigma_0</span><span class="o">=</span><span class="n">Σ_0</span><span class="p">)</span>
@@ -894,7 +896,7 @@ graph as the population distribution.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/296655bb8f1462110d2836109fa95f6a628e44235d61dea91a06eb61c845cfdf.png" src="_images/296655bb8f1462110d2836109fa95f6a628e44235d61dea91a06eb61c845cfdf.png" />
+<img alt="_images/19051e2663506903bbfbac539e88aef345c8d1390b8da80e5308959c558c5488.png" src="_images/19051e2663506903bbfbac539e88aef345c8d1390b8da80e5308959c558c5488.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -907,7 +909,7 @@ graph as the population distribution.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/09b0140090e47cb72f64f01a8683e0f0bc95b26377f7829df45744f0f097479e.png" src="_images/09b0140090e47cb72f64f01a8683e0f0bc95b26377f7829df45744f0f097479e.png" />
+<img alt="_images/a411bbff33db102e5ac719f141e897ba0ea44dbb9f88a5b69c95edd703406272.png" src="_images/a411bbff33db102e5ac719f141e897ba0ea44dbb9f88a5b69c95edd703406272.png" />
 </div>
 </div>
 <p>Here is what is going on in the above graphs.</p>
@@ -973,7 +975,7 @@ behavior early in the sample.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1064d1da9871238f5b27393ac8e53146b91334306473a3b51392cd33392ab914.png" src="_images/1064d1da9871238f5b27393ac8e53146b91334306473a3b51392cd33392ab914.png" />
+<img alt="_images/d9d97873474ed6a3ee2d16662df7d40171d1c92e46cda5d8d2017d5fb969f1d5.png" src="_images/d9d97873474ed6a3ee2d16662df7d40171d1c92e46cda5d8d2017d5fb969f1d5.png" />
 </div>
 </div>
 </section>
@@ -1018,7 +1020,7 @@ with each other at a gross risk-free interest rate of
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/84586248af89aa6b2c6abc60cc0a2446e701f727d6250fb4d9f70c5ab6c8c772.png" src="_images/84586248af89aa6b2c6abc60cc0a2446e701f727d6250fb4d9f70c5ab6c8c772.png" />
+<img alt="_images/e2e0e753cd44c845cb10f07f243b442f136fa4d27c5bb1fcafe4d720261d33d6.png" src="_images/e2e0e753cd44c845cb10f07f243b442f136fa4d27c5bb1fcafe4d720261d33d6.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1031,7 +1033,7 @@ with each other at a gross risk-free interest rate of
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f908c68c36f0223a3b5a9c9eefb9feb7ec83e9b15a273753b89cdd513a4cf132.png" src="_images/f908c68c36f0223a3b5a9c9eefb9feb7ec83e9b15a273753b89cdd513a4cf132.png" />
+<img alt="_images/1c7241e3f398ca990611f91fe9a5b1233ff5d72741163965b21185217edacd68.png" src="_images/1c7241e3f398ca990611f91fe9a5b1233ff5d72741163965b21185217edacd68.png" />
 </div>
 </div>
 <p>The graphs confirm the following outcomes:</p>
@@ -1053,7 +1055,7 @@ with each other at a gross risk-free interest rate of
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fc3cb20046176206a5a49b22fb9c774d40bc7bf3b5ef80b33b1bdd0d60453364.png" src="_images/fc3cb20046176206a5a49b22fb9c774d40bc7bf3b5ef80b33b1bdd0d60453364.png" />
+<img alt="_images/7028911a102b8a903c11d23a602ec492f37add6ef43a978fcb7ea16cc47f784a.png" src="_images/7028911a102b8a903c11d23a602ec492f37add6ef43a978fcb7ea16cc47f784a.png" />
 </div>
 </div>
 </section>

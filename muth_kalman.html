@@ -126,13 +126,13 @@ const thebe_selector_output = ".output, .cell_output"
 <!-- Normal Meta Tags -->
 <meta name="author" context="Thomas J. Sargent and John Stachurski" />
 <meta name="keywords" content="Python, QuantEcon, Quantitative Economics, Economics, Sloan, Alfred P. Sloan Foundation, Tom J. Sargent, John Stachurski" />
-<meta name="description" content=This website presents a set of lectures on dynamic linear economies and tools needed for this this class of economic models. />
+<meta name="description" content=This website presents a set of lectures on dynamic linear economies and tools needed for this class of economic models. />
 
 <!-- Twitter tags -->
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@quantecon" />
 <meta name="twitter:title" content="Reverse Engineering a la Muth"/>
-<meta name="twitter:description" content="This website presents a set of lectures on dynamic linear economies and tools needed for this this class of economic models.">
+<meta name="twitter:description" content="This website presents a set of lectures on dynamic linear economies and tools needed for this class of economic models.">
 <meta name="twitter:creator" content="@quantecon">
 <meta name="twitter:image" content="https://assets.quantecon.org/img/qe-twitter-logo.png">
 
@@ -141,7 +141,7 @@ const thebe_selector_output = ".output, .cell_output"
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://dle.quantecon.org/muth_kalman.html" />
 <meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
-<meta property="og:description" content="This website presents a set of lectures on dynamic linear economies and tools needed for this this class of economic models." />
+<meta property="og:description" content="This website presents a set of lectures on dynamic linear economies and tools needed for this class of economic models." />
 <meta property="og:site_name" content="Dynamic Linear Economies" />
 <meta name="theme-color" content="#ffffff" />
 
@@ -277,9 +277,7 @@ Requirement already satisfied: requests in /home/runner/miniconda3/envs/quanteco
 Requirement already satisfied: scipy&gt;=1.5.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.11.1)
 Requirement already satisfied: sympy in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.11.1)
 Requirement already satisfied: llvmlite&lt;0.41,&gt;=0.40.0dev0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from numba&gt;=0.49.0-&gt;quantecon) (0.40.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2.0.4)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2.0.4)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (3.4)
 Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (1.26.16)
 Requirement already satisfied: certifi&gt;=2017.4.17 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2023.7.22)
@@ -331,8 +329,8 @@ is optimal.</p>
 Friedman’s adaptive expectation scheme the <strong>answer</strong>.</p>
 <p>Muth (1960) used classical prediction methods based on lag-operators and
 <span class="math notranslate nohighlight">\(z\)</span>-transforms to find the answer to his question.</p>
-<p>Please see lectures <a class="reference external" href="https://quantecon.github.io/lecture-tools-techniques/lu_tricks.html" title="(in Python)"><span class="xref std std-doc">Classical Control with Linear Algebra</span></a> and
-<a class="reference external" href="https://quantecon.github.io/lecture-tools-techniques/classical_filtering.html" title="(in Python)"><span class="xref std std-doc">Classical Filtering and Prediction with Linear Algebra</span></a> for an introduction to the classical
+<p>Please see lectures <a class="reference external" href="https://tools-techniques.quantecon.org/lu_tricks.html" title="(in Python)"><span class="xref std std-doc">Classical Control with Linear Algebra</span></a> and
+<a class="reference external" href="https://tools-techniques.quantecon.org/classical_filtering.html" title="(in Python)"><span class="xref std std-doc">Classical Filtering and Prediction with Linear Algebra</span></a> for an introduction to the classical
 tools that Muth used.</p>
 <p>Rather than using those classical tools, in this lecture we apply the
 Kalman filter to express the heart of Muth’s analysis concisely.</p>
@@ -513,7 +511,7 @@ on the history <span class="math notranslate nohighlight">\(y_{t-1}, y_{t-2}, \l
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dec2f2ec8902226855b8e829158158a26f8c311cea49b2171205663a7d841ec5.png" src="_images/dec2f2ec8902226855b8e829158158a26f8c311cea49b2171205663a7d841ec5.png" />
+<img alt="_images/4f56ee8147cd5c1b93009cef5fd0ecde5c20ee79f499c9358482b3297a3e0e0b.png" src="_images/4f56ee8147cd5c1b93009cef5fd0ecde5c20ee79f499c9358482b3297a3e0e0b.png" />
 </div>
 </div>
 <p>Note how <span class="math notranslate nohighlight">\(x_t\)</span> and <span class="math notranslate nohighlight">\(\hat{x_t}\)</span> differ.</p>
@@ -537,7 +535,7 @@ idea about her/his <em>permanent income</em>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9b254d5302d72b5780627e88e12554e4a732913ca976a3085e31e151a4d5ef40.png" src="_images/9b254d5302d72b5780627e88e12554e4a732913ca976a3085e31e151a4d5ef40.png" />
+<img alt="_images/b1eed0cf266b5d9e2b3b34e08dcdd1b9d3a644c303a2ef62e5665d8ace3b57ae.png" src="_images/b1eed0cf266b5d9e2b3b34e08dcdd1b9d3a644c303a2ef62e5665d8ace3b57ae.png" />
 </div>
 </div>
 <p>We see above that <span class="math notranslate nohighlight">\(y\)</span> seems to look like white noise around the
@@ -558,7 +556,7 @@ values of <span class="math notranslate nohighlight">\(x\)</span>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/301609647ab20f61c61c32931166799cfdb776c22aff33b09194220e46ae9313.png" src="_images/301609647ab20f61c61c32931166799cfdb776c22aff33b09194220e46ae9313.png" />
+<img alt="_images/0eded4a2d0b9280639c51aaa5bb8672a726a405f381fc212c782001b0dc68fdd.png" src="_images/0eded4a2d0b9280639c51aaa5bb8672a726a405f381fc212c782001b0dc68fdd.png" />
 </div>
 </div>
 </section>
