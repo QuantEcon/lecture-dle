@@ -160,7 +160,7 @@ then the two models are mathematically equivalent.
 
 All characterizations of a $\{c_t, y_t, b_t\}$ in the LQ permanent income model automatically apply to a $\{T_t, G_t, B_t\}$ process in the Barro model of tax smoothing.
 
-See [consumption and tax smoothing models](https://python-advanced.quantecon.org/smoothing.html) for further exploitation of an isomorphism between consumption and tax smoothing models.
+See {doc}`consumption and tax smoothing models <dle:smoothing>` for further exploitation of an isomorphism between consumption and tax smoothing models.
 
 ### A Specification of the Nonfinancial Income Process
 
