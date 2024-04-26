@@ -56,7 +56,6 @@ We'll also require the following imports
 ```{code-cell} ipython
 import numpy as np
 import matplotlib.pyplot as plt
-%matplotlib inline
 from quantecon import DLE
 
 np.set_printoptions(suppress=True, precision=4)
