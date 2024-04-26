@@ -46,7 +46,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from collections import namedtuple
 from quantecon import DLE
-%matplotlib inline
 ```
 
 ## A One-Occupation Model

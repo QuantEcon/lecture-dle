@@ -49,7 +49,6 @@ import quantecon as qe
 import matplotlib.pyplot as plt
 from quantecon import DLE
 from math import sqrt
-%matplotlib inline
 ```
 
 This lecture describes  an early contribution to what is now often called
