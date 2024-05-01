@@ -40,7 +40,6 @@ We'll also need the following imports:
 
 ```{code-cell} ipython
 import matplotlib.pyplot as plt
-%matplotlib inline
 import numpy as np
 
 from quantecon import Kalman

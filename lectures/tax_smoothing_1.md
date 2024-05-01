@@ -44,7 +44,6 @@ Let's start with some standard imports:
 import quantecon as qe
 import numpy as np
 import matplotlib.pyplot as plt
-%matplotlib inline
 ```
 
 This lecture uses the method of   **Markov jump linear quadratic dynamic programming** that is described in lecture

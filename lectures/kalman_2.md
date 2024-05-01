@@ -51,7 +51,6 @@ In addition to what's in Anaconda, this lecture will need the following librarie
 To conduct simulations, we bring in these imports, as in {doc}`A First Look at the Kalman filter <kalman>`.
 
 ```{code-cell} ipython3
-%matplotlib inline
 import matplotlib.pyplot as plt
 plt.rcParams["figure.figsize"] = (11, 5)  #set default figure size
 import numpy as np

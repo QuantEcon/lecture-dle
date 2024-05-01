@@ -52,7 +52,6 @@ We require the following imports
 ```{code-cell} ipython
 import numpy as np
 import matplotlib.pyplot as plt
-%matplotlib inline
 from quantecon import DLE
 ```
 

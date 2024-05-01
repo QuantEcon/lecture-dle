@@ -56,7 +56,6 @@ We'll also need the following imports
 import numpy as np
 import matplotlib.pyplot as plt
 from quantecon import DLE
-%matplotlib inline
 ```
 
 We use a linear-quadratic version of an economy that Lucas (1978) {cite}`Lucas1978` used

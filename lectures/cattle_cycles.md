@@ -53,7 +53,6 @@ import matplotlib.pyplot as plt
 from collections import namedtuple
 from quantecon import DLE
 from math import sqrt
-%matplotlib inline
 ```
 
 ## The Model

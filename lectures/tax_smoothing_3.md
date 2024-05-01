@@ -62,7 +62,6 @@ Let's start with some standard imports:
 import quantecon as qe
 import numpy as np
 import matplotlib.pyplot as plt
-%matplotlib inline
 ```
 
 ## Roll-Over Risk
