@@ -612,7 +612,6 @@ class TaxSmoothingExample:
         ax.set_ylabel('Cumulative return', color=c1)
 
         ax_ = ax.twinx()
-        ax_._get_lines.prop_cycler = ax._get_lines.prop_cycler
         line2 = ax_.plot(np.arange(N), self.g_path, ls='--', color='green')[0]
         c2 = line2.get_color()
         ax_.set_ylabel('Government expenditures', color=c2)
