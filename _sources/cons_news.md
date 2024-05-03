@@ -607,7 +607,6 @@ As usual, we start by importing packages.
 import numpy as np
 import quantecon as qe
 import matplotlib.pyplot as plt
-%matplotlib inline
 ```
 
 ```{code-cell} python3

@@ -81,7 +81,6 @@ We'll need the following imports:
 import sys
 import numpy as np
 import matplotlib.pyplot as plt
-%matplotlib inline
 from numpy import sqrt, eye, zeros, cumsum
 from numpy.random import randn
 import scipy.linalg

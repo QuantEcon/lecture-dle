@@ -298,19 +298,19 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: quantecon in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (0.7.1)
-Requirement already satisfied: numba&gt;=0.49.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (0.57.1)
-Requirement already satisfied: numpy&gt;=1.17.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.24.3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: quantecon in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (0.7.2)
+Requirement already satisfied: numba&gt;=0.49.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (0.59.0)
+Requirement already satisfied: numpy&gt;=1.17.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.26.4)
 Requirement already satisfied: requests in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (2.31.0)
-Requirement already satisfied: scipy&gt;=1.5.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.11.1)
-Requirement already satisfied: sympy in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.11.1)
-Requirement already satisfied: llvmlite&lt;0.41,&gt;=0.40.0dev0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from numba&gt;=0.49.0-&gt;quantecon) (0.40.0)
+Requirement already satisfied: scipy&gt;=1.5.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.11.4)
+Requirement already satisfied: sympy in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.12)
+Requirement already satisfied: llvmlite&lt;0.43,&gt;=0.42.0dev0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from numba&gt;=0.49.0-&gt;quantecon) (0.42.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2.0.4)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (3.4)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (1.26.16)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2023.7.22)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2.0.7)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2024.2.2)
 Requirement already satisfied: mpmath&gt;=0.19 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from sympy-&gt;quantecon) (1.3.0)
 </pre></div>
 </div>
@@ -327,7 +327,7 @@ Requirement already satisfied: mpmath&gt;=0.19 in /home/runner/miniconda3/envs/q
 <p>Mathematically, LQ control problems are closely related to <a class="reference internal" href="kalman.html"><span class="doc">the Kalman filter</span></a></p>
 <ul class="simple">
 <li><p>Recursive formulations of linear-quadratic control problems and Kalman filtering problems both involve matrix <strong>Riccati equations</strong>.</p></li>
-<li><p>Classical formulations of linear control and linear filtering problems make use of similar matrix decompositions (see for example <a class="reference external" href="https://python-advanced.quantecon.org/lu_tricks.html">this lecture</a> and <a class="reference external" href="https://python-advanced.quantecon.org/classical_filtering.html">this lecture</a>).</p></li>
+<li><p>Classical formulations of linear control and linear filtering problems make use of similar matrix decompositions (see for example <a class="reference external" href="https://tools-techniques.quantecon.org/lu_tricks.html" title="(in Python)"><span class="xref std std-doc">this lecture</span></a> and <a class="reference external" href="https://tools-techniques.quantecon.org/classical_filtering.html" title="(in Python)"><span class="xref std std-doc">this lecture</span></a>).</p></li>
 </ul>
 <p>In reading what follows, it will be useful to have some familiarity with</p>
 <ul class="simple">
@@ -337,9 +337,9 @@ Requirement already satisfied: mpmath&gt;=0.19 in /home/runner/miniconda3/envs/q
 </ul>
 <p>For additional reading on LQ control, see, for example,</p>
 <ul class="simple">
-<li><p><span id="id1">[<a class="reference internal" href="zreferences.html#id173" title="L Ljungqvist and T J Sargent. Recursive Macroeconomic Theory. MIT Press, 4 edition, 2018.">LS18</a>]</span>, chapter 5</p></li>
-<li><p><span id="id2">[<a class="reference internal" href="zreferences.html#id157" title="L P Hansen and T J Sargent. Robustness. Princeton University Press, 2008.">HS08</a>]</span>, chapter 4</p></li>
-<li><p><span id="id3">[<a class="reference internal" href="zreferences.html#id159" title="O Hernandez-Lerma and J B Lasserre. Discrete-Time Markov Control Processes: Basic Optimality Criteria. Number Vol 1 in Applications of Mathematics Stochastic Modelling and Applied Probability. Springer, 1996.">HLL96</a>]</span>, section 3.5</p></li>
+<li><p><span id="id1">[<a class="reference internal" href="zreferences.html#id173" title="L Ljungqvist and T J Sargent. Recursive Macroeconomic Theory. MIT Press, 4 edition, 2018.">Ljungqvist and Sargent, 2018</a>]</span>, chapter 5</p></li>
+<li><p><span id="id2">[<a class="reference internal" href="zreferences.html#id157" title="L P Hansen and T J Sargent. Robustness. Princeton University Press, 2008.">Hansen and Sargent, 2008</a>]</span>, chapter 4</p></li>
+<li><p><span id="id3">[<a class="reference internal" href="zreferences.html#id159" title="O Hernandez-Lerma and J B Lasserre. Discrete-Time Markov Control Processes: Basic Optimality Criteria. Number Vol 1 in Applications of Mathematics Stochastic Modelling and Applied Probability. Springer, 1996.">Hernandez-Lerma and Lasserre, 1996</a>]</span>, section 3.5</p></li>
 </ul>
 <p>In order to focus on computation, we leave longer proofs to these sources (while trying to provide as much intuition as possible).</p>
 <p>Let’s start with some imports:</p>
@@ -497,7 +497,7 @@ C :=
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In fact, for many economic problems, the definiteness conditions on <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> can be relaxed.  It is sufficient that certain submatrices of <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> be nonnegative definite. See <span id="id4">[<a class="reference internal" href="zreferences.html#id157" title="L P Hansen and T J Sargent. Robustness. Princeton University Press, 2008.">HS08</a>]</span> for details.</p>
+<p>In fact, for many economic problems, the definiteness conditions on <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> can be relaxed.  It is sufficient that certain submatrices of <span class="math notranslate nohighlight">\(R\)</span> and <span class="math notranslate nohighlight">\(Q\)</span> be nonnegative definite. See <span id="id4">[<a class="reference internal" href="zreferences.html#id157" title="L P Hansen and T J Sargent. Robustness. Princeton University Press, 2008.">Hansen and Sargent, 2008</a>]</span> for details.</p>
 </div>
 <section id="id5">
 <h4><span class="section-number">4.2.2.1. </span>Example 1<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
@@ -734,7 +734,7 @@ propensity to consume from current income.</p>
 <p>Data contradicted the constancy of the marginal propensity to consume.</p>
 <p>In response, Milton Friedman, Franco Modigliani and others built models
 based on a consumer’s preference for an intertemporally smooth consumption stream.</p>
-<p>(See, for example, <span id="id7">[<a class="reference internal" href="zreferences.html#id151" title="M. Friedman. A Theory of the Consumption Function. Princeton University Press, 1956.">Fri56</a>]</span> or <span id="id8">[<a class="reference internal" href="zreferences.html#id186" title="F. Modigliani and R. Brumberg. Utility analysis and the consumption function: An interpretation of cross-section data. In K.K Kurihara, editor, Post-Keynesian Economics. 1954.">MB54</a>]</span>.)</p>
+<p>(See, for example, <span id="id7">[<a class="reference internal" href="zreferences.html#id151" title="M. Friedman. A Theory of the Consumption Function. Princeton University Press, 1956.">Friedman, 1956</a>]</span> or <span id="id8">[<a class="reference internal" href="zreferences.html#id186" title="F. Modigliani and R. Brumberg. Utility analysis and the consumption function: An interpretation of cross-section data. In K.K Kurihara, editor, Post-Keynesian Economics. 1954.">Modigliani and Brumberg, 1954</a>]</span>.)</p>
 <p>One property of those models is that households purchase and sell financial assets to make consumption streams smoother than income streams.</p>
 <p>The household savings problem <a class="reference internal" href="#lq-hhp"><span class="std std-ref">outlined above</span></a> captures these ideas.</p>
 <p>The optimization problem for the household is to choose a consumption sequence in order to minimize</p>
@@ -840,7 +840,7 @@ consumption can be simulated via <a class="reference internal" href="#equation-l
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1a5b715789616edc96472573840dce8766b521bb5270b11bfcd8231c4914a41d.png" src="_images/1a5b715789616edc96472573840dce8766b521bb5270b11bfcd8231c4914a41d.png" />
+<img alt="_images/bbf3001116d41ce66da036e2430d8d9b1bd1b67b3e1ce64ae085200d0a3fe669.png" src="_images/bbf3001116d41ce66da036e2430d8d9b1bd1b67b3e1ce64ae085200d0a3fe669.png" />
 </div>
 </div>
 <p>The top panel shows the time path of consumption <span class="math notranslate nohighlight">\(c_t\)</span> and income <span class="math notranslate nohighlight">\(y_t\)</span> in the simulation.</p>
@@ -902,7 +902,7 @@ relatively more weight on later consumption values.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bd8475a7bd4f8be54e10bb4371fb4909edf0b0bf3d6f73a2586b989eb09ae675.png" src="_images/bd8475a7bd4f8be54e10bb4371fb4909edf0b0bf3d6f73a2586b989eb09ae675.png" />
+<img alt="_images/b1fb0da8c5ce6087dbea6365a213e466d67f3ea108fafbb89d652ce509bcb182.png" src="_images/b1fb0da8c5ce6087dbea6365a213e466d67f3ea108fafbb89d652ce509bcb182.png" />
 </div>
 </div>
 <p>We now have a slowly rising consumption stream and a hump-shaped build-up
@@ -920,7 +920,7 @@ of assets in the middle periods to fund rising consumption.</p>
 <p>However, the loss of generality is not as large as you might first imagine.</p>
 <p>In fact, we can tackle many models with time-varying parameters by suitable choice of state variables.</p>
 <p>One illustration is given <a class="reference internal" href="#lq-nsi"><span class="std std-ref">below</span></a>.</p>
-<p>For further examples and a more systematic treatment, see <span id="id9">[<a class="reference internal" href="zreferences.html#id156" title="L P Hansen and T J Sargent. Recursive Models of Dynamic Linear Economies. The Gorman Lectures in Economics. Princeton University Press, 2013.">HS13a</a>]</span>, section 2.4.</p>
+<p>For further examples and a more systematic treatment, see <span id="id9">[<a class="reference internal" href="zreferences.html#id156" title="L P Hansen and T J Sargent. Recursive Models of Dynamic Linear Economies. The Gorman Lectures in Economics. Princeton University Press, 2013.">Hansen and Sargent, 2013</a>]</span>, section 2.4.</p>
 </section>
 <section id="adding-a-cross-product-term">
 <span id="lq-cpt"></span><h3><span class="section-number">4.5.2. </span>Adding a Cross-Product Term<a class="headerlink" href="#adding-a-cross-product-term" title="Permalink to this heading">#</a></h3>
@@ -1329,7 +1329,7 @@ y_t = m_1 t + m_2 t^2 + \sigma w_{t+1}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c1885c59fb29cd67532312bb1cf75358b037f48fdb0f3ae07273cbb04fe80019.png" src="_images/c1885c59fb29cd67532312bb1cf75358b037f48fdb0f3ae07273cbb04fe80019.png" />
+<img alt="_images/aca61714a1515a9dc6bde72d8bb6d6029318c1dccb9fe9abdeca59175ab260cc.png" src="_images/aca61714a1515a9dc6bde72d8bb6d6029318c1dccb9fe9abdeca59175ab260cc.png" />
 </div>
 </div>
 </section>
@@ -1470,7 +1470,7 @@ the lecture.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4f8a1a9925915164ff2c8548cb8c5fddfa6ad21418c08c3d64ddf3eccad4f4e8.png" src="_images/4f8a1a9925915164ff2c8548cb8c5fddfa6ad21418c08c3d64ddf3eccad4f4e8.png" />
+<img alt="_images/b1c0910c7f302bdbe41ec80c3847970a4a08c8ca10628fa68afd847df206f003.png" src="_images/b1c0910c7f302bdbe41ec80c3847970a4a08c8ca10628fa68afd847df206f003.png" />
 </div>
 </div>
 </section>
@@ -1577,7 +1577,7 @@ function, which we repeat here for convenience:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8adec97e85077fb48ef41fd15557ffd04d0d0f48f437e2e5439b8edec80cb568.png" src="_images/8adec97e85077fb48ef41fd15557ffd04d0d0f48f437e2e5439b8edec80cb568.png" />
+<img alt="_images/845d8e0bf7c44bd8b80ab10830d29e980da995d193027ada651fea64f9d7a08a.png" src="_images/845d8e0bf7c44bd8b80ab10830d29e980da995d193027ada651fea64f9d7a08a.png" />
 </div>
 </div>
 </section>

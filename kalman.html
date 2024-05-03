@@ -268,19 +268,19 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="expanded">Hide code cell output</span>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: quantecon in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (0.7.1)
-Requirement already satisfied: numba&gt;=0.49.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (0.57.1)
-Requirement already satisfied: numpy&gt;=1.17.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.24.3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: quantecon in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (0.7.2)
+Requirement already satisfied: numba&gt;=0.49.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (0.59.0)
+Requirement already satisfied: numpy&gt;=1.17.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.26.4)
 Requirement already satisfied: requests in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (2.31.0)
-Requirement already satisfied: scipy&gt;=1.5.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.11.1)
-Requirement already satisfied: sympy in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.11.1)
-Requirement already satisfied: llvmlite&lt;0.41,&gt;=0.40.0dev0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from numba&gt;=0.49.0-&gt;quantecon) (0.40.0)
+Requirement already satisfied: scipy&gt;=1.5.0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.11.4)
+Requirement already satisfied: sympy in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from quantecon) (1.12)
+Requirement already satisfied: llvmlite&lt;0.43,&gt;=0.42.0dev0 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from numba&gt;=0.49.0-&gt;quantecon) (0.42.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2.0.4)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (3.4)
-Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (1.26.16)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2023.7.22)
+Requirement already satisfied: urllib3&lt;3,&gt;=1.21.1 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2.0.7)
+Requirement already satisfied: certifi&gt;=2017.4.17 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from requests-&gt;quantecon) (2024.2.2)
 Requirement already satisfied: mpmath&gt;=0.19 in /home/runner/miniconda3/envs/quantecon/lib/python3.11/site-packages (from sympy-&gt;quantecon) (1.3.0)
 </pre></div>
 </div>
@@ -296,8 +296,8 @@ Requirement already satisfied: mpmath&gt;=0.19 in /home/runner/miniconda3/envs/q
 </ul>
 <p>For additional (more advanced) reading on the Kalman filter, see</p>
 <ul class="simple">
-<li><p><span id="id1">[<a class="reference internal" href="zreferences.html#id173" title="L Ljungqvist and T J Sargent. Recursive Macroeconomic Theory. MIT Press, 4 edition, 2018.">LS18</a>]</span>, section 2.7</p></li>
-<li><p><span id="id2">[<a class="reference internal" href="zreferences.html#id133" title="D. B. O. Anderson and J. B. Moore. Optimal Filtering. Dover Publications, 2005.">AM05</a>]</span></p></li>
+<li><p><span id="id1">[<a class="reference internal" href="zreferences.html#id173" title="L Ljungqvist and T J Sargent. Recursive Macroeconomic Theory. MIT Press, 4 edition, 2018.">Ljungqvist and Sargent, 2018</a>]</span>, section 2.7</p></li>
+<li><p><span id="id2">[<a class="reference internal" href="zreferences.html#id133" title="D. B. O. Anderson and J. B. Moore. Optimal Filtering. Dover Publications, 2005.">Anderson and Moore, 2005</a>]</span></p></li>
 </ul>
 <p>The second reference presents a  comprehensive treatment of the Kalman filter.</p>
 <p>Required knowledge: Familiarity with matrix manipulations, multivariate normal distributions, covariance matrices, etc.</p>
@@ -442,7 +442,11 @@ we do have some beliefs about <span class="math notranslate nohighlight">\(x\)</
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/eb4950712acc48c77d370be2db61810007b14ec254fa7c20c79e82e0593c9978.png" src="_images/eb4950712acc48c77d370be2db61810007b14ec254fa7c20c79e82e0593c9978.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_6131/3508717107.py:61: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  m_x, m_y = float(μ[0]), float(μ[1])
+</pre></div>
+</div>
+<img alt="_images/d9a0c99360b905e0f1c6d8683ceac7bcf13cfb0967848d329a0f9773cfdd9a98.png" src="_images/d9a0c99360b905e0f1c6d8683ceac7bcf13cfb0967848d329a0f9773cfdd9a98.png" />
 </div>
 </div>
 <section id="the-filtering-step">
@@ -467,7 +471,13 @@ location <span class="math notranslate nohighlight">\(y\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/77990b4c9cb1983d1db370683b6999666e5a774b7d2924fd1c9cd3749695a9d4.png" src="_images/77990b4c9cb1983d1db370683b6999666e5a774b7d2924fd1c9cd3749695a9d4.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_6131/3508717107.py:61: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  m_x, m_y = float(μ[0]), float(μ[1])
+/tmp/ipykernel_6131/3470248806.py:8: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  ax.text(float(y[0]), float(y[1]), &quot;$y$&quot;, fontsize=20, color=&quot;black&quot;)
+</pre></div>
+</div>
+<img alt="_images/2527a18f68be6175821f580479818c199322ea6106b42b5d3c8c93aa3af44d2e.png" src="_images/2527a18f68be6175821f580479818c199322ea6106b42b5d3c8c93aa3af44d2e.png" />
 </div>
 </div>
 <p>The bad news is that our sensors are imprecise.</p>
@@ -530,7 +540,13 @@ p(x \,|\, y) = N(\hat x^F, \Sigma^F)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/85eb140aa9995f52da0637b2c3c5cae71c4248f175d1d9fc46bde533eba1da9b.png" src="_images/85eb140aa9995f52da0637b2c3c5cae71c4248f175d1d9fc46bde533eba1da9b.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_6131/3508717107.py:61: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  m_x, m_y = float(μ[0]), float(μ[1])
+/tmp/ipykernel_6131/792457825.py:14: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  ax.text(float(y[0]), float(y[1]), &quot;$y$&quot;, fontsize=20, color=&quot;black&quot;)
+</pre></div>
+</div>
+<img alt="_images/ac77093a136efc3a4393073b19babc64bb33b5b7097ad384c5dddb0a844309f3.png" src="_images/ac77093a136efc3a4393073b19babc64bb33b5b7097ad384c5dddb0a844309f3.png" />
 </div>
 </div>
 <p>Our new density twists the prior <span class="math notranslate nohighlight">\(p(x)\)</span> in a direction determined by  the new
@@ -631,7 +647,13 @@ Q = 0.3 * \Sigma
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/25770a2c9bb063f4ba0be65c322d923c69ee73aa5677ac3acda806722074d0ab.png" src="_images/25770a2c9bb063f4ba0be65c322d923c69ee73aa5677ac3acda806722074d0ab.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_6131/3508717107.py:61: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  m_x, m_y = float(μ[0]), float(μ[1])
+/tmp/ipykernel_6131/3056082785.py:24: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  ax.text(float(y[0]), float(y[1]), &quot;$y$&quot;, fontsize=20, color=&quot;black&quot;)
+</pre></div>
+</div>
+<img alt="_images/1beec039bc23627cf8a33867f5cdc350b0b5e95b899865e0ccec4afba6343084.png" src="_images/1beec039bc23627cf8a33867f5cdc350b0b5e95b899865e0ccec4afba6343084.png" />
 </div>
 </div>
 </section>
@@ -657,7 +679,7 @@ as the current prior.</p>
     \hat x_{t+1} &amp;= A \hat x_t + K_{\Sigma_t} (y_t - G \hat x_t) \\
     \Sigma_{t+1} &amp;= A \Sigma_t A' - K_{\Sigma_t} G \Sigma_t A' + Q \nonumber
 \end{aligned}\end{split}\]</div>
-<p>These are the standard dynamic equations for the Kalman filter (see, for example, <span id="id4">[<a class="reference internal" href="zreferences.html#id173" title="L Ljungqvist and T J Sargent. Recursive Macroeconomic Theory. MIT Press, 4 edition, 2018.">LS18</a>]</span>, page 58).</p>
+<p>These are the standard dynamic equations for the Kalman filter (see, for example, <span id="id4">[<a class="reference internal" href="zreferences.html#id173" title="L Ljungqvist and T J Sargent. Recursive Macroeconomic Theory. MIT Press, 4 edition, 2018.">Ljungqvist and Sargent, 2018</a>]</span>, page 58).</p>
 </section>
 </section>
 <section id="convergence">
@@ -677,8 +699,8 @@ as the current prior.</p>
 <span class="eqno">(1.9)<a class="headerlink" href="#equation-kalman-dare" title="Permalink to this equation">#</a></span>\[\Sigma = A \Sigma A' -  A \Sigma G' (G \Sigma G' + R)^{-1} G \Sigma A' + Q\]</div>
 <p>Equation <a class="reference internal" href="#equation-kalman-sdy">(1.8)</a> is known as a discrete-time Riccati difference equation.</p>
 <p>Equation <a class="reference internal" href="#equation-kalman-dare">(1.9)</a> is known as a <a class="reference external" href="https://en.wikipedia.org/wiki/Algebraic_Riccati_equation">discrete-time algebraic Riccati equation</a>.</p>
-<p>Conditions under which a fixed point exists and the sequence <span class="math notranslate nohighlight">\(\{\Sigma_t\}\)</span> converges to it are discussed in <span id="id5">[<a class="reference internal" href="zreferences.html#id273" title="E. W. Anderson, L. P. Hansen, E. R. McGrattan, and T. J. Sargent. Mechanics of Forming and Estimating Dynamic Linear Economies. In Handbook of Computational Economics. Elsevier, vol 1 edition, 1996.">AHMS96</a>]</span> and <span id="id6">[<a class="reference internal" href="zreferences.html#id133" title="D. B. O. Anderson and J. B. Moore. Optimal Filtering. Dover Publications, 2005.">AM05</a>]</span>, chapter 4.</p>
-<p>A sufficient (but not necessary) condition is that all the eigenvalues <span class="math notranslate nohighlight">\(\lambda_i\)</span> of <span class="math notranslate nohighlight">\(A\)</span> satisfy <span class="math notranslate nohighlight">\(|\lambda_i| &lt; 1\)</span> (cf. e.g., <span id="id7">[<a class="reference internal" href="zreferences.html#id133" title="D. B. O. Anderson and J. B. Moore. Optimal Filtering. Dover Publications, 2005.">AM05</a>]</span>, p. 77).</p>
+<p>Conditions under which a fixed point exists and the sequence <span class="math notranslate nohighlight">\(\{\Sigma_t\}\)</span> converges to it are discussed in <span id="id5">[<a class="reference internal" href="zreferences.html#id273" title="E. W. Anderson, L. P. Hansen, E. R. McGrattan, and T. J. Sargent. Mechanics of Forming and Estimating Dynamic Linear Economies. In Handbook of Computational Economics. Elsevier, vol 1 edition, 1996.">Anderson <em>et al.</em>, 1996</a>]</span> and <span id="id6">[<a class="reference internal" href="zreferences.html#id133" title="D. B. O. Anderson and J. B. Moore. Optimal Filtering. Dover Publications, 2005.">Anderson and Moore, 2005</a>]</span>, chapter 4.</p>
+<p>A sufficient (but not necessary) condition is that all the eigenvalues <span class="math notranslate nohighlight">\(\lambda_i\)</span> of <span class="math notranslate nohighlight">\(A\)</span> satisfy <span class="math notranslate nohighlight">\(|\lambda_i| &lt; 1\)</span> (cf. e.g., <span id="id7">[<a class="reference internal" href="zreferences.html#id133" title="D. B. O. Anderson and J. B. Moore. Optimal Filtering. Dover Publications, 2005.">Anderson and Moore, 2005</a>]</span>, p. 77).</p>
 <p>(This strong condition assures that the unconditional  distribution of <span class="math notranslate nohighlight">\(x_t\)</span>  converges as <span class="math notranslate nohighlight">\(t \rightarrow + \infty\)</span>.)</p>
 <p>In this case, for any initial choice of <span class="math notranslate nohighlight">\(\Sigma_0\)</span> that is both non-negative and symmetric, the sequence <span class="math notranslate nohighlight">\(\{\Sigma_t\}\)</span> in <a class="reference internal" href="#equation-kalman-sdy">(1.8)</a> converges to a non-negative symmetric matrix <span class="math notranslate nohighlight">\(\Sigma\)</span> that solves <a class="reference internal" href="#equation-kalman-dare">(1.9)</a>.</p>
 </section>
@@ -728,7 +750,7 @@ Q := CC' \quad \text{and} \quad R := HH'
 <p class="admonition-title"><span class="caption-number">Exercise 1.1 </span></p>
 <section id="exercise-content">
 <p>Consider the following simple application of the Kalman filter, loosely based
-on <span id="id8">[<a class="reference internal" href="zreferences.html#id173" title="L Ljungqvist and T J Sargent. Recursive Macroeconomic Theory. MIT Press, 4 edition, 2018.">LS18</a>]</span>, section 2.9.2.</p>
+on <span id="id8">[<a class="reference internal" href="zreferences.html#id173" title="L Ljungqvist and T J Sargent. Recursive Macroeconomic Theory. MIT Press, 4 edition, 2018.">Ljungqvist and Sargent, 2018</a>]</span>, section 2.9.2.</p>
 <p>Suppose that</p>
 <ul class="simple">
 <li><p>all variables are scalars</p></li>
@@ -737,7 +759,7 @@ on <span id="id8">[<a class="reference internal" href="zreferences.html#id173" t
 <p>State dynamics are therefore given by <a class="reference internal" href="#equation-kl-xdynam">(1.5)</a> with <span class="math notranslate nohighlight">\(A=1\)</span>, <span class="math notranslate nohighlight">\(Q=0\)</span> and <span class="math notranslate nohighlight">\(x_0 = \theta\)</span>.</p>
 <p>The measurement equation is <span class="math notranslate nohighlight">\(y_t = \theta + v_t\)</span> where <span class="math notranslate nohighlight">\(v_t\)</span> is <span class="math notranslate nohighlight">\(N(0,1)\)</span> and IID.</p>
 <p>The task of this exercise to simulate the model and, using the code from <code class="docutils literal notranslate"><span class="pre">kalman.py</span></code>, plot the first five predictive densities <span class="math notranslate nohighlight">\(p_t(x) = N(\hat x_t, \Sigma_t)\)</span>.</p>
-<p>As shown in <span id="id9">[<a class="reference internal" href="zreferences.html#id173" title="L Ljungqvist and T J Sargent. Recursive Macroeconomic Theory. MIT Press, 4 edition, 2018.">LS18</a>]</span>, sections 2.9.1–2.9.2, these distributions asymptotically put all mass on the unknown value <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<p>As shown in <span id="id9">[<a class="reference internal" href="zreferences.html#id173" title="L Ljungqvist and T J Sargent. Recursive Macroeconomic Theory. MIT Press, 4 edition, 2018.">Ljungqvist and Sargent, 2018</a>]</span>, sections 2.9.1–2.9.2, these distributions asymptotically put all mass on the unknown value <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
 <p>In the simulation, take <span class="math notranslate nohighlight">\(\theta = 10\)</span>, <span class="math notranslate nohighlight">\(\hat x_0 = 8\)</span> and <span class="math notranslate nohighlight">\(\Sigma_0 = 1\)</span>.</p>
 <p>Your figure should – modulo randomness – look something like this</p>
 <figure class="align-default">
@@ -783,7 +805,11 @@ on <span id="id8">[<a class="reference internal" href="zreferences.html#id173" t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f16772163cac883127a2c3cf24773fe31f47849dd29c7257c682eb457d29f3b1.png" src="_images/f16772163cac883127a2c3cf24773fe31f47849dd29c7257c682eb457d29f3b1.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_6131/1660567565.py:21: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  m, v = [float(z) for z in (kalman.x_hat, kalman.Sigma)]
+</pre></div>
+</div>
+<img alt="_images/f93c91a43d34a089c71e2b1a67a18c6834ce2e2ae3f39ee7b7ce42499de9cfc1.png" src="_images/f93c91a43d34a089c71e2b1a67a18c6834ce2e2ae3f39ee7b7ce42499de9cfc1.png" />
 </div>
 </div>
 </section>
@@ -846,7 +872,11 @@ z_t := 1 - \int_{\theta - \epsilon}^{\theta + \epsilon} p_t(x) dx
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6b44bad8e72ed7f31cc001db42d4902562c1b09e4b92f1e7fa30cc63b8e0152c.png" src="_images/6b44bad8e72ed7f31cc001db42d4902562c1b09e4b92f1e7fa30cc63b8e0152c.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_6131/3050251196.py:16: DeprecationWarning: Conversion of an array with ndim &gt; 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  m, v = [float(temp) for temp in (kalman.x_hat, kalman.Sigma)]
+</pre></div>
+</div>
+<img alt="_images/731fe8b37ee56a5f74fd03cfca32c4a9ec3cf79bb5a191dd8b6ecbd833ee2c86.png" src="_images/731fe8b37ee56a5f74fd03cfca32c4a9ec3cf79bb5a191dd8b6ecbd833ee2c86.png" />
 </div>
 </div>
 </section>
@@ -965,7 +995,7 @@ Stationary prediction error variance:
  [0.1050718  0.41061709]]
 </pre></div>
 </div>
-<img alt="_images/05ce703e32d05573c7d9f269131648869575ae91ebf5b089a8c2be2a6175fcb1.png" src="_images/05ce703e32d05573c7d9f269131648869575ae91ebf5b089a8c2be2a6175fcb1.png" />
+<img alt="_images/3fae8804c461106d6f907aff16eaa8a72cd6dcf5d563ab2b79b07e2f1874fdf0.png" src="_images/3fae8804c461106d6f907aff16eaa8a72cd6dcf5d563ab2b79b07e2f1874fdf0.png" />
 </div>
 </div>
 </section>
@@ -982,7 +1012,7 @@ Stationary prediction error variance:
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
-<dd><p>See, for example, page 93 of <span id="id10">[<a class="reference internal" href="zreferences.html#id138" title="C. M. Bishop. Pattern Recognition and Machine Learning. Springer, 2006.">Bis06</a>]</span>. To get from his expressions to the ones used above, you will also need to apply the <a class="reference external" href="https://en.wikipedia.org/wiki/Woodbury_matrix_identity">Woodbury matrix identity</a>.</p>
+<dd><p>See, for example, page 93 of <span id="id10">[<a class="reference internal" href="zreferences.html#id138" title="C. M. Bishop. Pattern Recognition and Machine Learning. Springer, 2006.">Bishop, 2006</a>]</span>. To get from his expressions to the ones used above, you will also need to apply the <a class="reference external" href="https://en.wikipedia.org/wiki/Woodbury_matrix_identity">Woodbury matrix identity</a>.</p>
 </dd>
 </dl>
 </section>

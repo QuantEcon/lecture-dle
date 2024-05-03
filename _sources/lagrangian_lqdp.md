@@ -58,12 +58,12 @@ In focusing on eigenvalues and eigenvectors of this matrix, we capitalize on an 
 **invariant subspaces.** 
 
 These invariant subspace formulations of LQ dynamic programming problems provide a bridge between recursive
-(i.e., dynamic programming) formulations and classical formulations of linear control and linear filtering problems that make use of related matrix decompositions (see for example [this lecture](https://python-advanced.quantecon.org/lu_tricks.html) and [this lecture](https://python-advanced.quantecon.org/classical_filtering.html)).
+(i.e., dynamic programming) formulations and classical formulations of linear control and linear filtering problems that make use of related matrix decompositions (see for example {doc}`this lecture <tools:lu_tricks>` and {doc}`this lecture <tools:classical_filtering>`).
 
 While most of this lecture focuses on undiscounted problems, later sections describe handy ways of transforming discounted problems to undiscounted ones.
 
 The techniques in this lecture will prove useful when we study Stackelberg and Ramsey problem in
-[this lecture](https://python-advanced.quantecon.org/dyn_stack.html). 
+{doc}`this lecture <dps:dyn_stack>`. 
 
 
   
@@ -451,7 +451,7 @@ solves. See {cite}`Ljungqvist2012`,  ch 12.
 
 ## Application
 
-Here we demonstrate the computation with an example which is the deterministic version of an example borrowed from this [quantecon lecture](https://python.quantecon.org/lqcontrol.html).
+Here we demonstrate the computation with an example which is the deterministic version of an example borrowed from this {doc}`quantecon lecture <dle:lqcontrol>`.
 
 ```{code-cell} ipython3
 # Model parameters
@@ -826,7 +826,7 @@ which in the special case that $\beta = 1$ agrees with equation {eq}`lag-lqdp-eq
 
 +++
 
-By staring at system {eq}`eq663`, we can infer  identities that shed light on the structure of optimal linear regulator problems, some of which will be useful in [this lecture](https://python-advanced.quantecon.org/dyn_stack.html) when we apply and  extend the methods of this lecture to study Stackelberg and Ramsey problems.
+By staring at system {eq}`eq663`, we can infer  identities that shed light on the structure of optimal linear regulator problems, some of which will be useful in {doc}`this lecture <dps:dyn_stack>` when we apply and  extend the methods of this lecture to study Stackelberg and Ramsey problems.
 
 First, note that the first block of equation system {eq}`eq663` asserts that when  $\mu_{t+1} = P x_{t+1}$, then   
 
